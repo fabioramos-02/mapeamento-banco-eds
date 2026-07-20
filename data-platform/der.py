@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-from dominios import dominio
+from config_dominios import dominio
 
 BASE = Path(__file__).resolve().parent.parent
 OUT = BASE / "output" / "der.mmd"
@@ -49,12 +49,12 @@ def main():
     ativos = [t for t in inv.values() if t["count"]]
     por_dominio = {}
     for t in ativos:
-        por_dominio.setdefault(dominio(t["table"]), []).append(t)
+        por_dominio.setdefault(dominio(t["table"]).label, []).append(t)
 
     blocks = []
-    for dom in sorted(por_dominio):
-        tables = sorted(por_dominio[dom], key=lambda t: -t["count"])
-        blocks.append(f"%% === {dom} ({len(tables)} tabelas com dados) ===\n" + diagram(tables))
+    for label in sorted(por_dominio):
+        tables = sorted(por_dominio[label], key=lambda t: -t["count"])
+        blocks.append(f"%% === {label} ({len(tables)} tabelas com dados) ===\n" + diagram(tables))
 
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text("\n\n".join(blocks), encoding="utf-8")

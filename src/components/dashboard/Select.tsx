@@ -1,0 +1,32 @@
+// Copiado de bi-setdig/src/components/dashboard/Select.tsx
+export type OpcaoSelect = { value: string; label: string };
+
+export function Select({
+  label,
+  value,
+  onChange,
+  opcoes,
+  todosLabel,
+  maxWidth = 220,
+}: {
+  label: string;
+  value: string;
+  onChange: (valor: string) => void;
+  opcoes: OpcaoSelect[];
+  todosLabel: string;
+  maxWidth?: number;
+}) {
+  return (
+    <label className="ds-field" style={{ maxWidth }}>
+      <span className="ds-field__label">{label}</span>
+      <select className="ds-select" value={value} onChange={(e) => onChange(e.target.value)}>
+        <option value="">{todosLabel}</option>
+        {opcoes.map((o) => (
+          <option key={o.value} value={o.value}>
+            {o.label}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
