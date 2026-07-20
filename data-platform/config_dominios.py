@@ -16,8 +16,8 @@ class Dominio:
 
 
 DOMINIOS: list[Dominio] = [
-    Dominio("nucleo-portal", "Núcleo Portal",
-            "Carta de serviços: serviços, órgãos, unidades, temas — coração do portal",
+    Dominio("carta-servico", "Carta de Serviço",
+            "Serviços, órgãos, unidades, temas — coração do portal",
             critico=True),
     Dominio("auth-perfis", "Auth & Perfis",
             "Usuários, grupos, permissões, tokens, contas sociais",
@@ -38,7 +38,7 @@ DOMINIOS: list[Dominio] = [
 ]
 
 _POR_ID = {d.id: d for d in DOMINIOS}
-_PADRAO = _POR_ID["nucleo-portal"]
+_PADRAO = _POR_ID["carta-servico"]
 
 # tabela -> id do domínio (sobrepõe classificação automática por prefixo)
 _EXCECOES: dict[str, str] = {

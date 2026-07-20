@@ -16,9 +16,7 @@ export default function TecnicoPage() {
       <GovHeader atual="/tecnico" />
       <main className="max-w-5xl mx-auto px-6 py-8 flex flex-col gap-8">
         <section>
-          <h2 className="text-xl font-semibold mb-2" style={{ color: "var(--ds-color-text-primary)" }}>
-            Diagrama de relacionamentos (DER)
-          </h2>
+          <h2 className="heading-portal mb-2">Diagrama de relacionamentos (DER)</h2>
           <p className="text-sm mb-4" style={{ color: "var(--ds-color-text-secondary)" }}>
             Gerado a partir das chaves estrangeiras reais do banco, só para as tabelas com dados, agrupado por bloco
             funcional. Clique para expandir cada domínio.
@@ -28,9 +26,7 @@ export default function TecnicoPage() {
 
         <section>
           <div className="flex items-center justify-between mb-2 gap-4 flex-wrap">
-            <h2 className="text-xl font-semibold" style={{ color: "var(--ds-color-text-primary)" }}>
-              Consultas SQL
-            </h2>
+            <h2 className="heading-portal">Consultas SQL</h2>
             <a href="/consultas.sql" download className="ds-button ds-button--outline ds-button--sm">
               Baixar consultas.sql
             </a>

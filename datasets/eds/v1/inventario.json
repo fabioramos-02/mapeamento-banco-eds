@@ -1,12 +1,12 @@
 {
- "extraidoEm": "2026-07-20T18:47:29.086998+00:00",
+ "extraidoEm": "2026-07-20T19:38:14.020260+00:00",
  "tabelas": [
   {
    "schema": "public",
    "table": "gerenciamento_termosassinado",
    "nomeNegocio": "Termos Assinados pelo Cidadão",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -133,8 +133,8 @@
    "schema": "public",
    "table": "gerenciamento_historicoservico",
    "nomeNegocio": "Histórico de Alterações dos Serviços",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -220,8 +220,8 @@
    "schema": "public",
    "table": "gerenciamento_servicosunidade",
    "nomeNegocio": "Locais de Atendimento por Serviço",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -339,8 +339,8 @@
    "schema": "public",
    "table": "gerenciamento_revisaoservico",
    "nomeNegocio": "Revisões de Serviço",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -396,8 +396,8 @@
    "schema": "public",
    "table": "gerenciamento_jornada",
    "nomeNegocio": "Fluxo de Navegação do Cidadão",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -535,8 +535,8 @@
    "schema": "public",
    "table": "gerenciamento_tasks",
    "nomeNegocio": "Tarefas do Sistema",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -581,8 +581,8 @@
    "schema": "public",
    "table": "gerenciamento_servicos",
    "nomeNegocio": "Cadastro de Serviços",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -906,8 +906,8 @@
    "schema": "public",
    "table": "gerenciamento_unidades",
    "nomeNegocio": "Unidades de Atendimento",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "slug_unidade",
@@ -1013,8 +1013,8 @@
    "schema": "public",
    "table": "gerenciamento_servicoserros",
    "nomeNegocio": "Erros Reportados pelo Cidadão",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -1100,8 +1100,8 @@
    "schema": "public",
    "table": "gerenciamento_servicosfavoritos",
    "nomeNegocio": "Serviços Favoritos do Cidadão",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -1199,8 +1199,8 @@
    "schema": "public",
    "table": "gerenciamento_setor",
    "nomeNegocio": "Setores",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -1261,8 +1261,8 @@
    "schema": "public",
    "table": "gerenciamento_horariounidade",
    "nomeNegocio": "Horários por Unidade",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -1395,8 +1395,8 @@
    "schema": "public",
    "table": "gerenciamento_sistemasinstitucionaisfavoritos",
    "nomeNegocio": "Sistemasinstitucionaisfavoritos",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -1530,8 +1530,8 @@
    "schema": "public",
    "table": "gerenciamento_usuarioorgao",
    "nomeNegocio": "Usuarioorgao",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -1597,8 +1597,8 @@
    "schema": "public",
    "table": "gerenciamento_setorunidade",
    "nomeNegocio": "Setorunidade",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -1720,8 +1720,8 @@
    "schema": "public",
    "table": "gerenciamento_cidades",
    "nomeNegocio": "Cidades",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "slug",
@@ -1766,8 +1766,8 @@
    "schema": "public",
    "table": "gerenciamento_gestororgao",
    "nomeNegocio": "Gestororgao",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -1843,8 +1843,8 @@
    "schema": "public",
    "table": "gerenciamento_topicos",
    "nomeNegocio": "Tópicos de Atendimento",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -1894,8 +1894,8 @@
    "schema": "public",
    "table": "gerenciamento_orgaos",
    "nomeNegocio": "Cadastro de Órgãos",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -2016,8 +2016,8 @@
    "schema": "public",
    "table": "gerenciamento_enderecoorgao",
    "nomeNegocio": "Enderecoorgao",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -2158,8 +2158,8 @@
    "schema": "public",
    "table": "gerenciamento_contatoorgao",
    "nomeNegocio": "Contatoorgao",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -2250,8 +2250,8 @@
    "schema": "public",
    "table": "gerenciamento_servicosinternos",
    "nomeNegocio": "Serviços Internos",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -2456,8 +2456,8 @@
    "schema": "public",
    "table": "gerenciamento_temas",
    "nomeNegocio": "Categorias e Subcategorias de Serviços",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -2522,8 +2522,8 @@
    "schema": "public",
    "table": "gerenciamento_feriados",
    "nomeNegocio": "Feriados",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -2848,8 +2848,8 @@
    "schema": "public",
    "table": "gerenciamento_orgaosites",
    "nomeNegocio": "Orgaosites",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -3117,8 +3117,8 @@
    "schema": "public",
    "table": "gerenciamento_aplicativos",
    "nomeNegocio": "Aplicativos Institucionais",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -3188,8 +3188,8 @@
    "schema": "public",
    "table": "gerenciamento_guiches_user",
    "nomeNegocio": "Guiches user",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -3292,8 +3292,8 @@
    "schema": "public",
    "table": "gerenciamento_termos",
    "nomeNegocio": "Termos de Uso",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -3796,8 +3796,8 @@
    "schema": "public",
    "table": "gerenciamento_avaliacao",
    "nomeNegocio": "Avaliacao",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -4109,8 +4109,8 @@
    "schema": "public",
    "table": "gerenciamento_aviso",
    "nomeNegocio": "Aviso",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -4171,8 +4171,8 @@
    "schema": "public",
    "table": "gerenciamento_cancelamentos",
    "nomeNegocio": "Cancelamentos",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -4335,8 +4335,8 @@
    "schema": "public",
    "table": "gerenciamento_configuracoes",
    "nomeNegocio": "Configurações do Sistema",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -4602,8 +4602,8 @@
    "schema": "public",
    "table": "gerenciamento_servicosintegracao",
    "nomeNegocio": "Servicosintegracao",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -4674,8 +4674,8 @@
    "schema": "public",
    "table": "gerenciamento_sistemainstitucional",
    "nomeNegocio": "Sistemainstitucional",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -7255,8 +7255,8 @@
    "schema": "public",
    "table": "gerenciamento_configuracaoagendamento",
    "nomeNegocio": "Configuracaoagendamento",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -7322,8 +7322,8 @@
    "schema": "public",
    "table": "gerenciamento_contatounidade",
    "nomeNegocio": "Contatounidade",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -7389,8 +7389,8 @@
    "schema": "public",
    "table": "gerenciamento_excecaohorariosagendamento",
    "nomeNegocio": "Excecaohorariosagendamento",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -7511,8 +7511,8 @@
    "schema": "public",
    "table": "gerenciamento_excecaohorariosagendamentocomplementar",
    "nomeNegocio": "Excecaohorariosagendamentocomplementar",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -7603,8 +7603,8 @@
    "schema": "public",
    "table": "gerenciamento_guia",
    "nomeNegocio": "Guia",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -7659,8 +7659,8 @@
    "schema": "public",
    "table": "gerenciamento_guiaservicos",
    "nomeNegocio": "Guiaservicos",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -7783,8 +7783,8 @@
    "schema": "public",
    "table": "gerenciamento_mensagemadmin",
    "nomeNegocio": "Mensagemadmin",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -7840,8 +7840,8 @@
    "schema": "public",
    "table": "gerenciamento_mensagemadminlida",
    "nomeNegocio": "Mensagemadminlida",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -7902,8 +7902,8 @@
    "schema": "public",
    "table": "gerenciamento_motivos",
    "nomeNegocio": "Motivos",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -7959,8 +7959,8 @@
    "schema": "public",
    "table": "gerenciamento_notificacaoorgao",
    "nomeNegocio": "Notificacaoorgao",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -8279,8 +8279,8 @@
    "schema": "public",
    "table": "gerenciamento_reagendamentos",
    "nomeNegocio": "Reagendamentos",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -8515,8 +8515,8 @@
    "schema": "public",
    "table": "gerenciamento_setorservicosinternos",
    "nomeNegocio": "Setorservicosinternos",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -8577,8 +8577,8 @@
    "schema": "public",
    "table": "gerenciamento_subtopicos",
    "nomeNegocio": "Subtopicos",
-   "dominioId": "nucleo-portal",
-   "dominioLabel": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "dominioLabel": "Carta de Serviço",
    "columns": [
     {
      "name": "id",
@@ -8922,9 +8922,9 @@
  ],
  "dominios": [
   {
-   "id": "nucleo-portal",
-   "label": "Núcleo Portal",
-   "descricao": "Carta de serviços: serviços, órgãos, unidades, temas — coração do portal",
+   "id": "carta-servico",
+   "label": "Carta de Serviço",
+   "descricao": "Serviços, órgãos, unidades, temas — coração do portal",
    "critico": true
   },
   {
@@ -8966,8 +8966,8 @@
  ],
  "resumoDominios": [
   {
-   "dominioId": "nucleo-portal",
-   "label": "Núcleo Portal",
+   "dominioId": "carta-servico",
+   "label": "Carta de Serviço",
    "total": 47,
    "vazias": 13,
    "registros": 495492
@@ -9096,7 +9096,7 @@
   "atendimento": "erDiagram\n    atendimento_respostas }o--|| atendimento_topicos : \"topico_id\"\n    atendimento_topicos }o--|| gerenciamento_guiches : \"guiche_id\"\n    gerenciamento_guicheservico }o--|| gerenciamento_guiches : \"guiche_id\"\n    atendimento_avaliacaoonline }o--|| atendimento_topicos : \"agendamento_id\"\n    gerenciamento_temposervicofila }o--|| gerenciamento_filahorarios : \"fila_id\"\n    atendimento_observacao }o--|| atendimento_topicos : \"topico_id\"\n    gerenciamento_totem_prioridades }o--|| gerenciamento_totem : \"totem_id\"\n    gerenciamento_totem_prioridades }o--|| gerenciamento_prioridade : \"prioridade_id\"\n    gerenciamento_totem_servicos }o--|| gerenciamento_totem : \"totem_id\"",
   "auth-perfis": "erDiagram\n    auth_user {\n        integer id PK\n        character_varying password\n        timestamp_with_time_zone last_login\n        boolean is_superuser\n        character_varying username\n        character_varying first_name\n        character_varying last_name\n        character_varying email\n    }\n    gerenciamento_accesstoken {\n        integer id PK\n        text access_token\n        timestamp_with_time_zone created_at\n        timestamp_with_time_zone updated_at\n        integer user_id FK\n        boolean ativo\n    }\n    auth_user_groups {\n        integer id PK\n        integer user_id FK\n        integer group_id FK\n    }\n    auth_permission {\n        integer id PK\n        character_varying name\n        integer content_type_id FK\n        character_varying codename\n    }\n    authtoken_token {\n        character_varying key PK\n        timestamp_with_time_zone created\n        integer user_id FK\n    }\n    auth_group {\n        integer id PK\n        character_varying name\n    }\n    core_profilehierarchy_can_grant_profiles {\n        integer id PK\n        integer profilehierarchy_id FK\n        integer group_id FK\n    }\n    core_profilehierarchy_can_remove_profiles {\n        integer id PK\n        integer profilehierarchy_id FK\n        integer group_id FK\n    }\n    core_profilehierarchy {\n        integer id PK\n        integer level\n        timestamp_with_time_zone created_at\n        timestamp_with_time_zone updated_at\n        integer profile_id FK\n    }\n    rest_framework_api_key_apikey {\n        character_varying id PK\n        timestamp_with_time_zone created\n        character_varying name\n        boolean revoked\n        timestamp_with_time_zone expiry_date\n        character_varying hashed_key\n        character_varying prefix\n    }\n    gerenciamento_accesstoken }o--|| auth_user : \"user_id\"\n    auth_user_groups }o--|| auth_user : \"user_id\"\n    auth_user_groups }o--|| auth_group : \"group_id\"\n    authtoken_token }o--|| auth_user : \"user_id\"\n    core_profilehierarchy_can_grant_profiles }o--|| core_profilehierarchy : \"profilehierarchy_id\"\n    core_profilehierarchy_can_grant_profiles }o--|| auth_group : \"group_id\"\n    core_profilehierarchy_can_remove_profiles }o--|| core_profilehierarchy : \"profilehierarchy_id\"\n    core_profilehierarchy_can_remove_profiles }o--|| auth_group : \"group_id\"\n    core_profilehierarchy }o--|| auth_group : \"profile_id\"",
   "infra-django": "erDiagram\n    django_session {\n        character_varying session_key PK\n        text session_data\n        timestamp_with_time_zone expire_date\n    }\n    django_migrations {\n        integer id PK\n        character_varying app\n        character_varying name\n        timestamp_with_time_zone applied\n    }\n    django_content_type {\n        integer id PK\n        character_varying app_label\n        character_varying model\n    }\n    django_site {\n        integer id PK\n        character_varying domain\n        character_varying name\n    }",
-  "nucleo-portal": "erDiagram\n    gerenciamento_termosassinado }o--|| gerenciamento_termos : \"termo_id\"\n    gerenciamento_historicoservico }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_servicosunidade }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_servicosunidade }o--|| gerenciamento_unidades : \"unidade_id\"\n    gerenciamento_revisaoservico }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_jornada }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_servicos }o--|| gerenciamento_setor : \"setor_id\"\n    gerenciamento_servicos }o--|| gerenciamento_temas : \"tema_id\"\n    gerenciamento_servicos }o--|| gerenciamento_topicos : \"topico_id\"\n    gerenciamento_unidades }o--|| gerenciamento_cidades : \"cidade_id\"\n    gerenciamento_unidades }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_servicoserros }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_servicosfavoritos }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_setor }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_horariounidade }o--|| gerenciamento_unidades : \"unidade_id\"\n    gerenciamento_sistemasinstitucionaisfavoritos }o--|| gerenciamento_sistemainstitucional : \"sistema_institucional_id\"\n    gerenciamento_usuarioorgao }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_setorunidade }o--|| gerenciamento_unidades : \"unidade_id\"\n    gerenciamento_setorunidade }o--|| gerenciamento_setor : \"setor_id\"\n    gerenciamento_gestororgao }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_enderecoorgao }o--|| gerenciamento_cidades : \"cidade_id\"\n    gerenciamento_enderecoorgao }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_contatoorgao }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_servicosinternos }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_feriados }o--|| gerenciamento_cidades : \"cidade_id\"\n    gerenciamento_orgaosites }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_avaliacao }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_cancelamentos }o--|| gerenciamento_unidades : \"unidade_id\"\n    gerenciamento_configuracoes }o--|| gerenciamento_orgaos : \"orgao_terceira_instancia_id\"\n    gerenciamento_servicosintegracao }o--|| gerenciamento_servicos : \"servico_id\"",
+  "carta-servico": "erDiagram\n    gerenciamento_termosassinado }o--|| gerenciamento_termos : \"termo_id\"\n    gerenciamento_historicoservico }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_servicosunidade }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_servicosunidade }o--|| gerenciamento_unidades : \"unidade_id\"\n    gerenciamento_revisaoservico }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_jornada }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_servicos }o--|| gerenciamento_setor : \"setor_id\"\n    gerenciamento_servicos }o--|| gerenciamento_temas : \"tema_id\"\n    gerenciamento_servicos }o--|| gerenciamento_topicos : \"topico_id\"\n    gerenciamento_unidades }o--|| gerenciamento_cidades : \"cidade_id\"\n    gerenciamento_unidades }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_servicoserros }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_servicosfavoritos }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_setor }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_horariounidade }o--|| gerenciamento_unidades : \"unidade_id\"\n    gerenciamento_sistemasinstitucionaisfavoritos }o--|| gerenciamento_sistemainstitucional : \"sistema_institucional_id\"\n    gerenciamento_usuarioorgao }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_setorunidade }o--|| gerenciamento_unidades : \"unidade_id\"\n    gerenciamento_setorunidade }o--|| gerenciamento_setor : \"setor_id\"\n    gerenciamento_gestororgao }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_enderecoorgao }o--|| gerenciamento_cidades : \"cidade_id\"\n    gerenciamento_enderecoorgao }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_contatoorgao }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_servicosinternos }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_feriados }o--|| gerenciamento_cidades : \"cidade_id\"\n    gerenciamento_orgaosites }o--|| gerenciamento_orgaos : \"orgao_id\"\n    gerenciamento_avaliacao }o--|| gerenciamento_servicos : \"servico_id\"\n    gerenciamento_cancelamentos }o--|| gerenciamento_unidades : \"unidade_id\"\n    gerenciamento_configuracoes }o--|| gerenciamento_orgaos : \"orgao_terceira_instancia_id\"\n    gerenciamento_servicosintegracao }o--|| gerenciamento_servicos : \"servico_id\"",
   "avaliacao": "erDiagram\n    gerenciamento_avaliacaoinformacaoservicos {\n        integer id PK\n        boolean avaliacao\n        character_varying ip\n        timestamp_with_time_zone created_at\n        integer servico_id FK\n    }\n    gerenciamento_votosservicos {\n        integer id PK\n        text comentario\n        timestamp_with_time_zone created_at\n        integer servicos_id FK\n        integer user_id FK\n        smallint avaliacao\n        character_varying ip\n    }\n    gerenciamento_respostasavaliacao {\n        character_varying id PK\n        jsonb resposta\n        timestamp_with_time_zone created_at\n        timestamp_with_time_zone updated_at\n        character_varying avaliacao_id FK\n        integer user_id FK\n        character_varying ip\n    }\n    gerenciamento_perguntasavaliacao {\n        character_varying id PK\n        integer ordem\n        character_varying titulo\n        text descricao\n        character_varying tipo\n        timestamp_with_time_zone created_at\n        timestamp_with_time_zone updated_at\n        character_varying configuracao_id FK\n    }\n    gerenciamento_configuracaoavaliacao {\n        character_varying id PK\n        integer versao\n        character_varying titulo\n        text descricao\n        boolean ativo\n        timestamp_with_time_zone created_at\n        timestamp_with_time_zone updated_at\n        integer user_id FK\n    }\n    gerenciamento_linksavaliacao {\n        character_varying id PK\n        integer ordem\n        character_varying titulo\n        character_varying acao\n        text url\n        timestamp_with_time_zone created_at\n        timestamp_with_time_zone updated_at\n        character_varying configuracao_id FK\n    }\n    gerenciamento_qrcodeavaliacao {\n        character_varying id PK\n        character_varying titulo\n        timestamp_with_time_zone created_at\n        timestamp_with_time_zone updated_at\n        integer orgao_id FK\n        integer user_id FK\n        text descricao\n        character_varying qrcode_id\n    }\n    gerenciamento_respostasavaliacao }o--|| gerenciamento_configuracaoavaliacao : \"avaliacao_id\"\n    gerenciamento_perguntasavaliacao }o--|| gerenciamento_configuracaoavaliacao : \"configuracao_id\"\n    gerenciamento_linksavaliacao }o--|| gerenciamento_configuracaoavaliacao : \"configuracao_id\""
  }
 }

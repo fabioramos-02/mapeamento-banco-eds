@@ -53,6 +53,24 @@ body {
   background: var(--ds-color-background-muted);
 }
 
+/* Tipografia de heading emprestada do portal ms.gov.br (não do design system
+   interno) — pedido explícito para os títulos do relatório. h2 menor que h1,
+   senão todo título de seção fica do mesmo tamanho do título da página. */
+.heading-portal {
+  color: #333333;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: var(--font-roboto), Helvetica, Arial, sans-serif;
+}
+
+h1.heading-portal {
+  font-size: 2.25rem;
+}
+
+h2.heading-portal {
+  font-size: 1.25rem;
+}
+
 /* Impressão — relatório executivo, provável de ser impresso/exportado a PDF. */
 @media print {
   body {

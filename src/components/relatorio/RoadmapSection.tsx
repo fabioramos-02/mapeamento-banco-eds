@@ -3,7 +3,7 @@ import { DashboardSection } from "@/components/dashboard/DashboardSection";
 const ETAPAS = [
   { titulo: "Excluir as tabelas sem uso", desc: "55 tabelas com zero registros — confirmar com a EDS que nenhuma corresponde a funcionalidade contratada e ainda não ativada, e retirá-las do escopo de migração." },
   { titulo: "Validar as tabelas críticas", desc: "Tabelas de risco alto (seção 5) — volume grande num bloco central do negócio. Confirmar regras de negócio e formato esperado na XVia antes de migrar." },
-  { titulo: "Migrar o núcleo do portal", desc: "Serviços, órgãos, unidades, temas e o cadastro de usuários — a base que sustenta a carta de serviços." },
+  { titulo: "Migrar a Carta de Serviço", desc: "Serviços, órgãos, unidades, temas e o cadastro de usuários — a base que sustenta a carta de serviços." },
   { titulo: "Recriar credenciais e infraestrutura", desc: "Tokens de acesso, chaves de API e tabelas internas do framework não são copiados — nascem de novo na XVia." },
   { titulo: "Homologação", desc: "Conferir volume, integridade e regras de negócio dos dados migrados antes de desligar o acesso à EDS." },
 ];

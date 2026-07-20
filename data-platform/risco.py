@@ -1,6 +1,6 @@
 """Classificação de risco de migração por tabela: volume de dados + criticidade do domínio.
 
-Domínio crítico (Núcleo Portal, Auth & Perfis) baixa a barra de "alto" — uma tabela
+Domínio crítico (Carta de Serviço, Auth & Perfis) baixa a barra de "alto" — uma tabela
 central do portal já é risco alto com volume moderado; num domínio periférico só o
 volume muito grande justifica risco alto sozinho.
 """

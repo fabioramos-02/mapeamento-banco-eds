@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { DataTable, type Coluna } from "@/components/dashboard/DataTable";
+import { DataTable, type Coluna, type RangeInfo } from "@/components/dashboard/DataTable";
 import { Select } from "@/components/dashboard/Select";
 import { RiscoBadge, SugestaoBadge } from "@/components/relatorio/Badges";
 import { formatBytes } from "@/lib/format";
@@ -79,6 +79,7 @@ export function InventarioTable({ tabelas, dominios }: { tabelas: Tabela[]; domi
   const [dominioId, setDominioId] = useState("");
   const [status, setStatus] = useState("");
   const [busca, setBusca] = useState("");
+  const [range, setRange] = useState<RangeInfo | null>(null);
 
   const filtradas = useMemo(() => {
     const buscaLower = busca.toLowerCase();
@@ -111,10 +112,10 @@ export function InventarioTable({ tabelas, dominios }: { tabelas: Tabela[]; domi
         />
         <Select label="Sugestão" value={status} onChange={setStatus} todosLabel="Todas" opcoes={STATUS_OPCOES} />
         <span className="text-sm ml-auto" style={{ color: "var(--ds-color-text-muted)" }}>
-          {filtradas.length} de {tabelas.length} tabelas
+          {range ? `Mostrando ${range.from}–${range.to} de ${range.total}` : `${filtradas.length} de ${tabelas.length}`} tabelas
         </span>
       </div>
-      <DataTable columns={colunas} rows={filtradas} rowKey={(t) => t.table} />
+      <DataTable columns={colunas} rows={filtradas} rowKey={(t) => t.table} onRangeChange={setRange} />
     </div>
   );
 }
