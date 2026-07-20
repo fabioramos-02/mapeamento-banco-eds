@@ -3,6 +3,12 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Modal } from "@/components/dashboard/Modal";
 
+// Carta de Serviço tem 34 tabelas sem FK entre a maioria delas — não é um DER
+// estrito (entidade-relacionamento), é uma visão ampla das tabelas do domínio.
+function tipoDiagrama(dominioId: string): "Modelagem Lógica" | "DER" {
+  return dominioId === "carta-servico" ? "Modelagem Lógica" : "DER";
+}
+
 /** Lista de botões (um por domínio) que abrem o diagrama num modal grande —
  * Mermaid só é importado e renderizado quando o modal abre (lazy). */
 export function DerViewer({ der, dominioLabels }: { der: Record<string, string>; dominioLabels: Record<string, string> }) {
@@ -23,7 +29,7 @@ export function DerViewer({ der, dominioLabels }: { der: Record<string, string>;
               {dominioLabels[dominioId] ?? dominioId}
             </span>
             <span className="text-xs" style={{ color: "var(--ds-color-text-muted)" }}>
-              Ver diagrama de relacionamentos
+              Ver {tipoDiagrama(dominioId) === "Modelagem Lógica" ? "modelagem lógica" : "diagrama de relacionamentos (DER)"}
             </span>
           </span>
           <span
@@ -59,15 +65,51 @@ function DerModal({ dominioId, titulo, mermaidSrc, onClose }: { dominioId: strin
   const arrastoRef = useRef<{ x: number; y: number; scrollLeft: number; scrollTop: number } | null>(null);
   const [arrastando, setArrastando] = useState(false);
 
+  // Fit por conter (usa o menor entre largura/altura) — reage ao viewBox atual do
+  // svg, que já deve estar cortado pro conteúdo real (ver efeito abaixo).
   const ajustarLargura = useCallback(() => {
     const canvas = canvasRef.current;
     const svgEl = canvas?.querySelector("svg");
     if (!canvas || !svgEl) return;
     const viewBox = svgEl.getAttribute("viewBox")?.split(/\s+/).map(Number);
     const larguraNativa = viewBox?.[2] || parseFloat(svgEl.getAttribute("width") || "0");
-    if (!larguraNativa) return;
-    const disponivel = canvas.clientWidth - 48;
-    setZoom(Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, disponivel / larguraNativa)));
+    const alturaNativa = viewBox?.[3] || parseFloat(svgEl.getAttribute("height") || "0");
+    if (!larguraNativa || !alturaNativa) return;
+    const disponivelW = canvas.clientWidth - 48;
+    const disponivelH = canvas.clientHeight - 48;
+    const escala = Math.min(disponivelW / larguraNativa, disponivelH / alturaNativa);
+    setZoom(Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, escala)));
+  }, []);
+
+  // Corta o viewBox pro bbox real do conteúdo ANTES de guardar no state — fazer
+  // isso num useEffect separado (rodando depois do commit) perde a corrida contra
+  // o StrictMode do React, que invoca este effect assíncrono 2x em dev: a segunda
+  // chamada de mermaid.render pode resolver depois do crop e substituir o SVG pelo
+  // original (sem corte), fazendo o diagrama "encolher" dentro do viewBox cheio de
+  // espaço morto. Cortando aqui, cada resolução da promise já produz uma string
+  // final correta, então não importa qual delas "ganha".
+  const recortarViewBox = useCallback((svgString: string) => {
+    const container = document.createElement("div");
+    container.style.cssText = "position:absolute;visibility:hidden;pointer-events:none;";
+    document.body.appendChild(container);
+    container.innerHTML = svgString;
+    const svgEl = container.querySelector("svg");
+    try {
+      if (!svgEl) return svgString;
+      const bbox = svgEl.getBBox();
+      if (!bbox.width || !bbox.height) return svgString;
+      const pad = 16;
+      const largura = bbox.width + pad * 2;
+      const altura = bbox.height + pad * 2;
+      svgEl.setAttribute("viewBox", `${bbox.x - pad} ${bbox.y - pad} ${largura} ${altura}`);
+      svgEl.setAttribute("width", String(largura));
+      svgEl.setAttribute("height", String(altura));
+      return container.innerHTML;
+    } catch {
+      return svgString;
+    } finally {
+      document.body.removeChild(container);
+    }
   }, []);
 
   useEffect(() => {
@@ -77,7 +119,7 @@ function DerModal({ dominioId, titulo, mermaidSrc, onClose }: { dominioId: strin
         const mermaid = (await import("mermaid")).default;
         mermaid.initialize({ startOnLoad: false, theme: "neutral" });
         const { svg: renderedSvg } = await mermaid.render(`der-${dominioId}`, mermaidSrc);
-        if (!cancelado) setSvg(renderedSvg);
+        if (!cancelado) setSvg(recortarViewBox(renderedSvg));
       } catch (err) {
         if (!cancelado) setErro(String(err));
       }
@@ -85,12 +127,12 @@ function DerModal({ dominioId, titulo, mermaidSrc, onClose }: { dominioId: strin
     return () => {
       cancelado = true;
     };
-  }, [dominioId, mermaidSrc]);
+  }, [dominioId, mermaidSrc, recortarViewBox]);
 
-  // Roda só depois que o SVG entra no DOM (commit do React) — chamar logo após
-  // setSvg() dentro do effect acima corria risco de disparar antes do commit.
+  // Ajusta o zoom pro conteúdo já cortado assim que o SVG entra no DOM.
   useEffect(() => {
-    if (svg) ajustarLargura();
+    if (!svg) return;
+    ajustarLargura();
   }, [svg, ajustarLargura]);
 
   const onPointerDown = (e: React.PointerEvent) => {
@@ -113,7 +155,7 @@ function DerModal({ dominioId, titulo, mermaidSrc, onClose }: { dominioId: strin
   };
 
   return (
-    <Modal open onClose={onClose} title={titulo} width="min(1400px, 96vw)" maxHeight="92vh">
+    <Modal open onClose={onClose} title={`${titulo} — ${tipoDiagrama(dominioId)}`} width="min(1400px, 96vw)" maxHeight="92vh" height="92vh">
       <div className="relative h-full min-h-[60vh] flex flex-col">
         <div
           className="absolute top-3 right-3 z-10 flex items-center gap-1 px-1.5 py-1.5"
@@ -135,7 +177,7 @@ function DerModal({ dominioId, titulo, mermaidSrc, onClose }: { dominioId: strin
             +
           </ToolbarBtn>
           <span className="w-px h-5 mx-1" style={{ background: "var(--ds-color-border)" }} />
-          <ToolbarBtn onClick={ajustarLargura} label="Ajustar à largura" wide>
+          <ToolbarBtn onClick={ajustarLargura} label="Ajustar ao conteúdo" wide>
             Ajustar
           </ToolbarBtn>
         </div>

@@ -12,6 +12,7 @@ export function Modal({
   title,
   width = "min(560px, 92vw)",
   maxHeight = "85vh",
+  height,
   children,
 }: {
   open: boolean;
@@ -19,6 +20,7 @@ export function Modal({
   title: string;
   width?: string;
   maxHeight?: string;
+  height?: string;
   children: React.ReactNode;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
@@ -46,6 +48,7 @@ export function Modal({
         boxShadow: "0 24px 64px -12px rgba(0,0,0,0.35)",
         width,
         maxHeight,
+        height,
         display: "flex",
         flexDirection: "column",
         position: "fixed",
