@@ -1,0 +1,163 @@
+Funcao mapear tabela que ja tem registros, entender comportamentos e regras e trazer sugestões
+
+Proximo passo: entender quantos dados tem em cada tabela 
+
+Montar um Der dessas tabelas 
+
+Apresentar Um relatorio disso para trazer como discussão
+
+é muito importante trazer um apontamento da quantidade de tabelas que tem na EDS e que não estão em uso
+
+Já deixar no relatorio um comando select se precisar 
+
+
+
+
+gerenciamento_servicos - coração do portal
+
+gerenciamento_temas - Tabela importante para Dani sobre categorias e subcategorias
+
+auth_group
+
+auth_permission
+
+auth_user - vai manter no portal de consutla?
+
+auth_user_groups
+
+authtoken_token ?? entender
+
+core_profilehierarchy
+
+core_profilehierarchy_can_grant_profiles
+
+core_profilehierarchy_can_remove_profiles
+
+gerenciamento_aplicativos - incluir campo texto alternativo
+
+gerenciamento_avaliacaoinformacaoservicos - faz sentido trazer?
+
+gerenciamento_aviso
+
+gerenciamento_cancelamentos
+
+gerenciamento_cidades
+
+gerenciamento_configuracaoavaliacao
+
+gerenciamento_configuracoes -- entender
+
+gerenciamento_contatoorgao
+
+gerenciamento_enderecoorgao
+
+gerenciamento_feriados
+
+gerenciamento_filahorarios
+
+gerenciamento_gestororgao
+
+gerenciamento_guiches - é do Modulo de atendimento
+
+gerenciamento_guicheservico
+
+gerenciamento_historicoservico - ajuda na auditoria e processo de aprovação da CGE
+
+gerenciamento_horarioatendimento - é do Modulo de atendimento
+
+gerenciamento_horariounidade - Glau usar como exemplo se vai importar os dados ou não?
+
+gerenciamento_jornada - Informação sobre a carta de serviço tem dado relevante sobre integração com o govBR
+
+gerenciamento_linksavaliacao
+
+gerenciamento_orgaos
+
+gerenciamento_orgaosites
+
+gerenciamento_perguntasavaliacao - aparece no final da carta de serviço
+
+gerenciamento_prioridade - Ver data de registro
+
+gerenciamento_qrcodeavaliacao
+
+gerenciamento_respostasavaliacao
+
+gerenciamento_revisaoservico
+
+gerenciamento_servicoserros - Questionar repostas enviadas pelo cidadão - Exemplo ter uma IA para fazer a triagem
+
+gerenciamento_servicosfavoritos - vai trazer no meu painel???
+
+gerenciamento_servicosintegracao
+
+gerenciamento_servicosinternos - entender com o Everaldo 
+
+gerenciamento_servicosunidade - Local de atendimento
+
+gerenciamento_setor
+
+gerenciamento_setorunidade
+
+gerenciamento_sistemainstitucional
+
+gerenciamento_sistemasinstitucionaisfavoritos
+
+gerenciamento_tasks
+
+gerenciamento_temposervicofila
+
+gerenciamento_termos
+
+gerenciamento_termosassinado - Vai ter baastante registro
+
+gerenciamento_topicos
+
+gerenciamento_totem
+
+gerenciamento_totem_prioridades
+
+gerenciamento_totem_servicos
+
+gerenciamento_unidades
+
+gerenciamento_unidadeusuarios
+
+gerenciamento_usuarioorgao
+
+gerenciamento_votosservicos
+
+rest_framework_api_key_apikey
+
+ROLES 	
+	cge_auditoria_ms
+	dba_admin
+	painel-sgd
+	pg_execute_server_program
+	pg_monitor
+	pg_read_all_settings
+	pg_read_all_stats
+	pg_read_server_files
+	pg_signal_backend
+	pg_stat_scan_tables
+pg_write_server_files
+postgres
+suporte-bi
+
+
+
+
+
+
+
+
+
+
+django_content_type
+
+django_migrations
+
+django_session
+
+gerenciamento_acessounidadeusuarios
+
