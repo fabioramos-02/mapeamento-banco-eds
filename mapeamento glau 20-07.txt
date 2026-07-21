@@ -1,0 +1,648 @@
+Funcao mapear tabela que ja tem registros, entender comportamentos e regras e trazer sugestões
+
+Proximo passo: entender quantos dados tem em cada tabela 
+
+Montar um Der dessas tabelas 
+
+Apresentar Um relatorio disso para trazer como discussão
+
+é muito importante trazer um apontamento da quantidade de tabelas que tem na EDS e que não estão em uso
+
+Já deixar no relatorio um comando select se precisar 
+
+
+output\relatorio.html quebrar em html, css, js dividir de forma de facilitar na organização de novos dominios
+
+project id da vercel prj_QMJeusBzTvado0xW9is9fjfSevO4 subir o relatorio na vercel
+
+corrigir desingu system
+
+tenha como contexto C:\Users\framos\Documents\SETDIG\2026\Projetos\bi-setdig para ver a estilização e estrutura
+
+Li o relatório inteiro e minha impressão é que você está muito acima da média na parte técnica, mas ainda há oportunidades grandes na forma como a história é contada para a gestão.
+
+Hoje eu daria a seguinte nota:
+
+Critério	Nota
+Qualidade técnica do levantamento	10/10
+Storytelling dos dados	8/10
+Front-end / Visualização	8,5/10
+Apoio à tomada de decisão	9/10
+Clareza para público executivo	7,5/10
+
+O documento está excelente para alguém técnico. Para um secretário, superintendente ou gerente de projeto, ainda exige esforço para entender "o que fazer".
+
+O maior acerto
+
+Você não fez um inventário.
+
+Você transformou um banco PostgreSQL em informação para decisão.
+
+Isso é raro.
+
+Você respondeu perguntas que normalmente aparecem numa reunião de migração:
+
+Quanto existe?
+O que realmente é usado?
+O que nunca foi usado?
+Onde estão os dados?
+O que pode deixar de migrar?
+Quais tabelas precisam de validação?
+
+Essa estrutura está muito boa.
+
+O que mais gostei
+A primeira página
+
+A abertura já entrega um insight.
+
+44% das tabelas nunca receberam um registro.
+
+Isso é ótimo.
+
+Você já começa com um dado que muda completamente a conversa.
+
+Não começa falando:
+
+"O banco possui 125 tabelas..."
+
+Você começa falando:
+
+"Quase metade nunca foi utilizada."
+
+Isso prende atenção.
+
+Os KPIs
+
+Gostei muito destes:
+
+125 tabelas
+70 em uso
+55 vazias
+932 mil registros
+340 MB
+
+Isso resume o banco em cinco números.
+
+Muito bom.
+
+Separar por blocos funcionais
+
+Excelente ideia.
+
+Ao invés de mostrar 125 tabelas misturadas, você criou:
+
+Núcleo Portal
+Atendimento
+Avaliação
+Auth
+Diário
+Agendamento
+
+Isso aproxima do negócio.
+
+O inventário
+
+Também gostei.
+
+Porque ele deixa de ser uma simples lista.
+
+Ele responde:
+
+registros
+tamanho
+sugestão
+observação
+
+É praticamente um backlog da migração.
+
+Agora as críticas
+1) Falta uma pergunta principal
+
+Hoje o relatório responde muitas coisas.
+
+Mas ele não responde claramente:
+
+Afinal...
+
+Quanto realmente precisa ser migrado?
+
+Esse deveria ser o objetivo do documento.
+
+Eu abriria assim:
+
+A decisão
+
+Dos 125 conjuntos de dados existentes,
+
+55 podem ser descartados inicialmente
+70 precisam ser avaliados
+destes,
+X migrar
+Y recriar
+Z validar
+
+Esse é o número que o gestor quer.
+
+Hoje ele precisa descobrir isso lendo.
+
+2) Muito foco em banco
+
+Você fala muito:
+
+Tabela
+
+Registro
+
+Coluna
+
+Schema
+
+FK
+
+DER
+
+Mas a XVia não compra tabelas.
+
+Ela compra funcionalidades.
+
+Exemplo:
+
+Em vez de:
+
+gerenciamento_servicos
+
+Dizer:
+
+Cadastro de Serviços
+
+Em vez de
+
+auth_user
+
+Dizer
+
+Cadastro de Usuários
+
+Em vez de
+
+gerenciamento_jornada
+
+Fluxo de navegação do cidadão
+
+Você traduziria linguagem técnica para linguagem de negócio.
+
+3) A capa poderia responder
+
+Hoje:
+
+44% nunca receberam registros.
+
+Legal.
+
+Mas eu faria algo ainda mais executivo.
+
+Vale a pena migrar tudo?
+
+Resposta:
+
+Não.
+
+44% do banco nunca foi utilizado.
+
+Isso muda completamente o tom.
+
+4) Faltou mostrar risco
+
+A migração não é só volume.
+
+É risco.
+
+Exemplo:
+
+As tabelas poderiam receber etiquetas.
+
+🟢 Baixo risco
+
+🟡 Médio
+
+🔴 Alto
+
+Exemplo:
+
+auth_user
+
+🔴
+
+gerenciamento_servicos
+
+🔴
+
+gerenciamento_termosassinado
+
+🟡
+
+gerenciamento_jornada
+
+🟢
+
+Isso ajuda muito a XVia.
+
+5) Os gráficos
+
+Aqui achei que pode melhorar bastante.
+
+Hoje você usa barras.
+
+Mas existem gráficos melhores para esse tipo de decisão.
+
+Uso das tabelas
+
+Hoje
+
+70
+
+55
+
+Eu faria um Donut.
+
+██████████████████
+
+70 usadas
+
+55 vazias
+
+Muito mais visual.
+
+Concentração
+
+Hoje
+
+Top 10 tabelas
+
+Eu faria um Pareto.
+
+91%
+
+■■■■■■■■■■■■■■■■■■■
+
+restante
+
+■■
+
+Você mostra imediatamente que quase tudo está em duas tabelas.
+
+Blocos
+
+Ao invés das barras...
+
+Eu faria TreeMap.
+
+Núcleo Portal
+
+██████████
+
+Auth
+
+███████
+
+Avaliação
+
+██
+
+Atendimento
+
+█
+
+
+É muito mais intuitivo.
+
+6) Página do DER
+
+Essa foi a única que eu tiraria.
+
+Para gestão ela pesa.
+
+Ela é ótima para desenvolvedor.
+
+Mas quebra totalmente o storytelling.
+
+Eu colocaria ela no anexo.
+
+7) Inventário
+
+Muito bom.
+
+Mas enorme.
+
+A gestão dificilmente vai ler 125 linhas.
+
+Eu faria dois níveis.
+
+Página:
+
+Resumo.
+
+Botão
+
+↓
+
+Inventário completo.
+
+8) Falta um roadmap
+
+Eu senti falta de uma última página.
+
+Algo assim.
+
+Próximos passos
+
+Etapa 1
+
+Excluir 55 tabelas vazias
+
+↓
+
+Etapa 2
+
+Validar 9 tabelas críticas
+
+↓
+
+Etapa 3
+
+Migrar núcleo do portal
+
+↓
+
+Etapa 4
+
+Recriar credenciais
+
+↓
+
+Etapa 5
+
+Homologação
+
+Isso fecha a história.
+
+Storytelling
+
+Hoje sua narrativa é mais ou menos assim:
+
+Banco
+
+↓
+
+Tabela
+
+↓
+
+Contagem
+
+↓
+
+Inventário
+
+↓
+
+DER
+
+↓
+
+Perguntas
+
+Eu inverteria.
+
+A história ideal
+1
+
+O problema
+
+"Precisamos decidir o que migrar."
+
+↓
+
+2
+
+A descoberta
+
+"44% nunca foi usado."
+
+↓
+
+3
+
+Onde estão os dados
+
+"Núcleo do Portal concentra praticamente tudo."
+
+↓
+
+4
+
+Quais tabelas realmente importam
+
+"As duas maiores representam 91%."
+
+↓
+
+5
+
+O que migrar
+
+Tabela de decisão.
+
+↓
+
+6
+
+O que ainda depende da EDS
+
+9 perguntas.
+
+↓
+
+7
+
+Plano de ação.
+
+Percebe?
+
+É uma história.
+
+Uma melhoria que eu faria (e que elevaria bastante o nível)
+
+Em vez de um PDF estático, transformaria esse trabalho em um dashboard executivo em Next.js (ou até o Portal BI que você está construindo). Assim você teria:
+
+Resumo Executivo com os principais indicadores e recomendação ("Não migrar 44% das tabelas").
+Visão por domínio funcional (Portal, Auth, Atendimento etc.).
+Inventário pesquisável, com filtros por bloco, status ("Migrar", "Avaliar", "Não migrar"), volume de registros e tamanho.
+Mapa de decisão da migração, mostrando visualmente quais conjuntos serão migrados, recriados ou descartados.
+Detalhamento técnico (DER e consultas SQL) acessível apenas quando necessário.
+
+Isso atenderia dois públicos ao mesmo tempo: a gestão teria uma visão clara para tomada de decisão, enquanto a equipe técnica continuaria tendo acesso a todos os detalhes.
+
+Minha avaliação final
+
+A qualidade técnica do levantamento é excelente. Você conseguiu transformar um banco de dados complexo em um material organizado, com evidências e recomendações iniciais.
+
+O principal ponto de evolução agora não é coletar mais dados, e sim reduzir a carga cognitiva de quem vai tomar a decisão. Em outras palavras, fazer com que um secretário consiga responder, em cinco minutos:
+
+O que precisa migrar?
+O que pode ser descartado?
+Quais são os riscos?
+O que ainda precisa de validação?
+Qual é o próximo passo?
+
+Se você fizer essa evolução, esse deixa de ser apenas um relatório técnico e passa a ser um documento executivo de apoio à decisão de migração, que é exatamente o tipo de material esperado em um projeto estratégico como a transição entre EDS e XVia.
+
+gerenciamento_servicos - coração do portal
+
+gerenciamento_temas - Tabela importante para Dani sobre categorias e subcategorias
+
+auth_group
+
+auth_permission
+
+auth_user - vai manter no portal de consutla?
+
+auth_user_groups
+
+authtoken_token ?? entender
+
+core_profilehierarchy
+
+core_profilehierarchy_can_grant_profiles
+
+core_profilehierarchy_can_remove_profiles
+
+gerenciamento_aplicativos - incluir campo texto alternativo
+
+gerenciamento_avaliacaoinformacaoservicos - faz sentido trazer?
+
+gerenciamento_aviso
+
+gerenciamento_cancelamentos
+
+gerenciamento_cidades
+
+gerenciamento_configuracaoavaliacao
+
+gerenciamento_configuracoes -- entender
+
+gerenciamento_contatoorgao
+
+gerenciamento_enderecoorgao
+
+gerenciamento_feriados
+
+gerenciamento_filahorarios
+
+gerenciamento_gestororgao
+
+gerenciamento_guiches - é do Modulo de atendimento
+
+gerenciamento_guicheservico
+
+gerenciamento_historicoservico - ajuda na auditoria e processo de aprovação da CGE
+
+gerenciamento_horarioatendimento - é do Modulo de atendimento
+
+gerenciamento_horariounidade - Glau usar como exemplo se vai importar os dados ou não?
+
+gerenciamento_jornada - Informação sobre a carta de serviço tem dado relevante sobre integração com o govBR
+
+gerenciamento_linksavaliacao
+
+gerenciamento_orgaos
+
+gerenciamento_orgaosites
+
+gerenciamento_perguntasavaliacao - aparece no final da carta de serviço
+
+gerenciamento_prioridade - Ver data de registro
+
+gerenciamento_qrcodeavaliacao
+
+gerenciamento_respostasavaliacao
+
+gerenciamento_revisaoservico
+
+gerenciamento_servicoserros - Questionar repostas enviadas pelo cidadão - Exemplo ter uma IA para fazer a triagem
+
+gerenciamento_servicosfavoritos - vai trazer no meu painel???
+
+gerenciamento_servicosintegracao
+
+gerenciamento_servicosinternos - entender com o Everaldo 
+
+gerenciamento_servicosunidade - Local de atendimento
+
+gerenciamento_setor
+
+gerenciamento_setorunidade
+
+gerenciamento_sistemainstitucional
+
+gerenciamento_sistemasinstitucionaisfavoritos
+
+gerenciamento_tasks
+
+gerenciamento_temposervicofila
+
+gerenciamento_termos
+
+gerenciamento_termosassinado - Vai ter baastante registro
+
+gerenciamento_topicos
+
+gerenciamento_totem
+
+gerenciamento_totem_prioridades
+
+gerenciamento_totem_servicos
+
+gerenciamento_unidades
+
+gerenciamento_unidadeusuarios
+
+gerenciamento_usuarioorgao
+
+gerenciamento_votosservicos
+
+rest_framework_api_key_apikey
+
+ROLES 	
+	cge_auditoria_ms
+	dba_admin
+	painel-sgd
+	pg_execute_server_program
+	pg_monitor
+	pg_read_all_settings
+	pg_read_all_stats
+	pg_read_server_files
+	pg_signal_backend
+	pg_stat_scan_tables
+pg_write_server_files
+postgres
+suporte-bi
+
+
+
+
+
+
+
+
+
+
+django_content_type
+
+django_migrations
+
+django_session
+
+gerenciamento_acessounidadeusuarios
+

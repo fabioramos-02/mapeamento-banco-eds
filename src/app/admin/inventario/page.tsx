@@ -1,15 +1,15 @@
 import { GovHeader } from "@/components/relatorio/GovHeader";
 import { InventarioTable } from "@/components/relatorio/InventarioTable";
-import { getInventarioEds } from "@/lib/data";
+import { getInventarioAdmin } from "@/lib/data";
 
-export const metadata = { title: "Inventário completo — Mapeamento do Banco EDS" };
+export const metadata = { title: "Inventário completo — Mapeamento do Banco Admin (EDS)" };
 
-export default function InventarioPage() {
-  const inv = getInventarioEds();
+export default function AdminInventarioPage() {
+  const inv = getInventarioAdmin();
 
   return (
     <>
-      <GovHeader atual="/inventario" />
+      <GovHeader atual="/admin/inventario" dominio="admin" />
       <main className="max-w-6xl mx-auto px-6 py-8">
         <h2 className="heading-portal mb-2">Inventário completo</h2>
         <p className="text-sm mb-6" style={{ color: "var(--ds-color-text-secondary)" }}>

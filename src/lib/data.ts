@@ -1,9 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 
-// ponytail: leitura direta via fs.readFileSync — sem abstração source/version/dataset
-// genérica (como em bi-setdig/src/lib/data.ts), é 1 dataset só.
-const DATASET_PATH = path.join(process.cwd(), "datasets", "eds", "v1", "inventario.json");
+export type DatasetId = "admin" | "controlador";
+
+export type DominioMeta = { id: DatasetId; label: string; descricao: string };
+
+export const DOMINIOS_DISPONIVEIS: DominioMeta[] = [
+  { id: "admin", label: "Admin", descricao: "Carta de Serviço, órgãos, unidades, atendimento — banco admin_prd" },
+  { id: "controlador", label: "Controlador", descricao: "Login federado gov.br, autenticação, pessoa — banco controlador_prd" },
+];
 
 export type Coluna = { name: string; type: string; nullable: boolean };
 export type ForeignKey = { column: string; refTable: string; refColumn: string };
@@ -45,11 +50,16 @@ export type InventarioEds = {
   der: Record<string, string>;
 };
 
-let cache: InventarioEds | null = null;
+const cache = new Map<DatasetId, InventarioEds>();
 
-export function getInventarioEds(): InventarioEds {
-  if (!cache) {
-    cache = JSON.parse(fs.readFileSync(DATASET_PATH, "utf-8"));
+export function getInventario(dataset: DatasetId): InventarioEds {
+  let inv = cache.get(dataset);
+  if (!inv) {
+    const p = path.join(process.cwd(), "datasets", dataset, "v1", "inventario.json");
+    inv = JSON.parse(fs.readFileSync(p, "utf-8"));
+    cache.set(dataset, inv!);
   }
-  return cache!;
+  return inv!;
 }
+
+export const getInventarioAdmin = () => getInventario("admin");

@@ -18,14 +18,14 @@ def _load_env():
     return env
 
 
-def connect():
+def connect(banco_env="BANCO_ADMIN"):
     env = _load_env()
     conn = psycopg2.connect(
         host=env["HOST"],
         port=env["PORT"],
         user=env["USER"],
         password=env["PASSWORD"],
-        dbname=env["BANCO"],
+        dbname=env[banco_env],
         connect_timeout=15,
         options="-c default_transaction_read_only=on -c statement_timeout=120000",
     )

@@ -1,0 +1,3321 @@
+{
+ "extraidoEm": "2026-07-21T20:31:26.557090+00:00",
+ "tabelas": [
+  {
+   "schema": "public",
+   "table": "authentication_historicologin",
+   "nomeNegocio": "Authentication historicologin",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "ip",
+     "type": "inet",
+     "nullable": true
+    },
+    {
+     "name": "user_agent",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "app_id",
+     "type": "bigint",
+     "nullable": true
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "digital_certificate",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "cnpj",
+     "type": "character varying",
+     "nullable": true
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "app_id",
+     "refTable": "public.oauth2_provider_application",
+     "refColumn": "id"
+    },
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 17752457,
+   "countEstimated": false,
+   "totalBytes": 5862768640,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_tokengovbr",
+   "nomeNegocio": "Authentication tokengovbr",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "token",
+     "type": "text",
+     "nullable": false
+    },
+    {
+     "name": "metodo_autenticacao",
+     "type": "text",
+     "nullable": true
+    },
+    {
+     "name": "cnpj",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 9086140,
+   "countEstimated": false,
+   "totalBytes": 9377980416,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_acessossistemagsi",
+   "nomeNegocio": "Authentication acessossistemagsi",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "system_id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "group_id",
+     "type": "integer",
+     "nullable": true
+    },
+    {
+     "name": "geo_estrutura_id",
+     "type": "integer",
+     "nullable": true
+    },
+    {
+     "name": "sigla",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "nome",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "descricao",
+     "type": "text",
+     "nullable": true
+    },
+    {
+     "name": "endereco",
+     "type": "text",
+     "nullable": true
+    },
+    {
+     "name": "extra_data",
+     "type": "jsonb",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 6086115,
+   "countEstimated": false,
+   "totalBytes": 3802243072,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "django_session",
+   "nomeNegocio": "Sessões de Login",
+   "dominioId": "django",
+   "dominioLabel": "Django",
+   "columns": [
+    {
+     "name": "session_key",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "session_data",
+     "type": "text",
+     "nullable": false
+    },
+    {
+     "name": "expire_date",
+     "type": "timestamp with time zone",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "session_key"
+   ],
+   "fks": [],
+   "count": 3685749,
+   "countEstimated": false,
+   "totalBytes": 2989277184,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "auth_codigo_govbr",
+   "nomeNegocio": "Codigo govbr",
+   "dominioId": "auth",
+   "dominioLabel": "Auth",
+   "columns": [
+    {
+     "name": "id",
+     "type": "uuid",
+     "nullable": false
+    },
+    {
+     "name": "code",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "used",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "govbr_original_code",
+     "type": "text",
+     "nullable": true
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 1950925,
+   "countEstimated": false,
+   "totalBytes": 1354113024,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "oauth2_provider_grant",
+   "nomeNegocio": "Oauth2 provider grant",
+   "dominioId": "oauth2",
+   "dominioLabel": "Oauth2",
+   "columns": [
+    {
+     "name": "id",
+     "type": "bigint",
+     "nullable": false
+    },
+    {
+     "name": "code",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "expires",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "redirect_uri",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "scope",
+     "type": "text",
+     "nullable": false
+    },
+    {
+     "name": "application_id",
+     "type": "bigint",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "created",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated",
+     "type": "timestamp with time zone",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "application_id",
+     "refTable": "public.oauth2_provider_application",
+     "refColumn": "id"
+    },
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 1711756,
+   "countEstimated": false,
+   "totalBytes": 1300144128,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_acessousuario",
+   "nomeNegocio": "Authentication acessousuario",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "tipo",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "expires",
+     "type": "date",
+     "nullable": true
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "app_id",
+     "type": "bigint",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "app_id",
+     "refTable": "public.oauth2_provider_application",
+     "refColumn": "id"
+    },
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 1381572,
+   "countEstimated": false,
+   "totalBytes": 248815616,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "pessoa_pessoa",
+   "nomeNegocio": "Pessoa pessoa",
+   "dominioId": "pessoa",
+   "dominioLabel": "Pessoa",
+   "columns": [
+    {
+     "name": "nome",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "nome_social",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "cpf",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "sexo",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "nome_pai",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "nome_mae",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "data_nascimento",
+     "type": "date",
+     "nullable": true
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "data_obito",
+     "type": "date",
+     "nullable": true
+    },
+    {
+     "name": "motivo_obito",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "obito",
+     "type": "boolean",
+     "nullable": true
+    },
+    {
+     "name": "govbr_certificados",
+     "type": "jsonb",
+     "nullable": true
+    },
+    {
+     "name": "govbr_empresas",
+     "type": "jsonb",
+     "nullable": true
+    },
+    {
+     "name": "govbr_niveis",
+     "type": "jsonb",
+     "nullable": true
+    },
+    {
+     "name": "govbr_selos",
+     "type": "jsonb",
+     "nullable": true
+    },
+    {
+     "name": "dados_empresa",
+     "type": "jsonb",
+     "nullable": true
+    },
+    {
+     "name": "dados_servidor",
+     "type": "jsonb",
+     "nullable": true
+    },
+    {
+     "name": "empresa",
+     "type": "boolean",
+     "nullable": true
+    },
+    {
+     "name": "servidor",
+     "type": "boolean",
+     "nullable": true
+    }
+   ],
+   "pk": [
+    "cpf"
+   ],
+   "fks": [],
+   "count": 951765,
+   "countEstimated": false,
+   "totalBytes": 669777920,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "pessoa_contato",
+   "nomeNegocio": "Pessoa contato",
+   "dominioId": "pessoa",
+   "dominioLabel": "Pessoa",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "email",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "telefone",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "pessoa_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "celular",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "facebook",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "instagram",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "twitter",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "whatsapp",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "email_verificado",
+     "type": "boolean",
+     "nullable": true
+    },
+    {
+     "name": "email_anterior",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "origem_celular",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "origem_email",
+     "type": "character varying",
+     "nullable": true
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "pessoa_id",
+     "refTable": "public.pessoa_pessoa",
+     "refColumn": "cpf"
+    }
+   ],
+   "count": 951721,
+   "countEstimated": false,
+   "totalBytes": 277250048,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_user",
+   "nomeNegocio": "Authentication user",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "password",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "last_login",
+     "type": "timestamp with time zone",
+     "nullable": true
+    },
+    {
+     "name": "first_name",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "last_name",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "email",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "date_joined",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "pessoa_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "username",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "temporario",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "validado",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "tipo_auth",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "is_staff",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "is_superuser",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "is_active",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "expired_token",
+     "type": "bigint",
+     "nullable": true
+    },
+    {
+     "name": "digital_certificate",
+     "type": "bytea",
+     "nullable": true
+    },
+    {
+     "name": "type_digital_certificate",
+     "type": "character varying",
+     "nullable": true
+    }
+   ],
+   "pk": [
+    "pessoa_id"
+   ],
+   "fks": [
+    {
+     "column": "pessoa_id",
+     "refTable": "public.pessoa_pessoa",
+     "refColumn": "cpf"
+    }
+   ],
+   "count": 951708,
+   "countEstimated": false,
+   "totalBytes": 747724800,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_user_groups",
+   "nomeNegocio": "Authentication user groups",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "group_id",
+     "type": "integer",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "group_id",
+     "refTable": "public.auth_group",
+     "refColumn": "id"
+    },
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 932870,
+   "countEstimated": false,
+   "totalBytes": 190193664,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_confirmarlogin",
+   "nomeNegocio": "Authentication confirmarlogin",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "token",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "valid",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "expires",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "no_expire",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 225686,
+   "countEstimated": false,
+   "totalBytes": 56803328,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_errosgovbr",
+   "nomeNegocio": "Authentication errosgovbr",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "ip",
+     "type": "inet",
+     "nullable": true
+    },
+    {
+     "name": "user_agent",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [],
+   "count": 40091,
+   "countEstimated": false,
+   "totalBytes": 13885440,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_empresa_users",
+   "nomeNegocio": "Authentication empresa users",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "empresa_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    },
+    {
+     "column": "empresa_id",
+     "refTable": "public.authentication_empresa",
+     "refColumn": "id"
+    }
+   ],
+   "count": 28221,
+   "countEstimated": false,
+   "totalBytes": 12623872,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_empresa",
+   "nomeNegocio": "Authentication empresa",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "nome",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "cnpj",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [],
+   "count": 27949,
+   "countEstimated": false,
+   "totalBytes": 8110080,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_assinaturagovbr",
+   "nomeNegocio": "Authentication assinaturagovbr",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "session_key",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "redirect_to",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "state",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "token",
+     "type": "text",
+     "nullable": true
+    },
+    {
+     "name": "concluido",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "cancelado",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "app_id",
+     "type": "bigint",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    },
+    {
+     "column": "app_id",
+     "refTable": "public.oauth2_provider_application",
+     "refColumn": "id"
+    }
+   ],
+   "count": 13969,
+   "countEstimated": false,
+   "totalBytes": 17489920,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "alto",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "pessoa_fotos",
+   "nomeNegocio": "Pessoa fotos",
+   "dominioId": "pessoa",
+   "dominioLabel": "Pessoa",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "arquivo",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "pessoa_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "atual",
+     "type": "boolean",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "pessoa_id",
+     "refTable": "public.pessoa_pessoa",
+     "refColumn": "cpf"
+    }
+   ],
+   "count": 6711,
+   "countEstimated": false,
+   "totalBytes": 1597440,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "medio",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_sucessogovbr",
+   "nomeNegocio": "Authentication sucessogovbr",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "ultimo",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [],
+   "count": 5702,
+   "countEstimated": false,
+   "totalBytes": 1499136,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "medio",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_favoritossistemagsi",
+   "nomeNegocio": "Authentication favoritossistemagsi",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "system_id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "sigla",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "nome",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "extra_data",
+     "type": "jsonb",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "descricao",
+     "type": "text",
+     "nullable": true
+    },
+    {
+     "name": "endereco",
+     "type": "text",
+     "nullable": true
+    },
+    {
+     "name": "geo_estrutura_id",
+     "type": "integer",
+     "nullable": true
+    },
+    {
+     "name": "group_id",
+     "type": "integer",
+     "nullable": true
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 3776,
+   "countEstimated": false,
+   "totalBytes": 2547712,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "medio",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_confirmarassinatura",
+   "nomeNegocio": "Authentication confirmarassinatura",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "token",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "valid",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "expires",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "cpf",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "email",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "state",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "used",
+     "type": "boolean",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 563,
+   "countEstimated": false,
+   "totalBytes": 221184,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_assinatura",
+   "nomeNegocio": "Authentication assinatura",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "hash",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "identificador",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "validado",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "tipo",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "internal_state",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "app_id",
+     "type": "bigint",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "hash"
+   ],
+   "fks": [
+    {
+     "column": "app_id",
+     "refTable": "public.oauth2_provider_application",
+     "refColumn": "id"
+    },
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 527,
+   "countEstimated": false,
+   "totalBytes": 458752,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_usuarioorgao",
+   "nomeNegocio": "Authentication usuarioorgao",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "perfil",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "orgao_id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    },
+    {
+     "column": "orgao_id",
+     "refTable": "public.authentication_orgaos",
+     "refColumn": "id"
+    }
+   ],
+   "count": 234,
+   "countEstimated": false,
+   "totalBytes": 106496,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "auth_permission",
+   "nomeNegocio": "Permissões de Acesso",
+   "dominioId": "auth",
+   "dominioLabel": "Auth",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "name",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "content_type_id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "codename",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "content_type_id",
+     "refTable": "public.django_content_type",
+     "refColumn": "id"
+    }
+   ],
+   "count": 172,
+   "countEstimated": false,
+   "totalBytes": 98304,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "django_migrations",
+   "nomeNegocio": "Migrations",
+   "dominioId": "django",
+   "dominioLabel": "Django",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "app",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "name",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "applied",
+     "type": "timestamp with time zone",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [],
+   "count": 101,
+   "countEstimated": false,
+   "totalBytes": 65536,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "oauth2_provider_application",
+   "nomeNegocio": "Oauth2 provider application",
+   "dominioId": "oauth2",
+   "dominioLabel": "Oauth2",
+   "columns": [
+    {
+     "name": "id",
+     "type": "bigint",
+     "nullable": false
+    },
+    {
+     "name": "client_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "redirect_uris",
+     "type": "text",
+     "nullable": false
+    },
+    {
+     "name": "client_type",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "authorization_grant_type",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "client_secret",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "name",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "skip_authorization",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "created",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated",
+     "type": "timestamp with time zone",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 56,
+   "countEstimated": false,
+   "totalBytes": 180224,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "django_content_type",
+   "nomeNegocio": "Content type",
+   "dominioId": "django",
+   "dominioLabel": "Django",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "app_label",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "model",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [],
+   "count": 43,
+   "countEstimated": false,
+   "totalBytes": 73728,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_orgaos",
+   "nomeNegocio": "Authentication orgaos",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "slug",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "sigla",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "nome",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "ativo",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "orgao_externo",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "orgao_externo_id",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "orgao_sgeo_id",
+     "type": "character varying",
+     "nullable": true
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [],
+   "count": 42,
+   "countEstimated": false,
+   "totalBytes": 245760,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_assinaturaredirecionamento",
+   "nomeNegocio": "Authentication assinaturaredirecionamento",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "redirect_to",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "ativo",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "app_id",
+     "type": "bigint",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    },
+    {
+     "column": "app_id",
+     "refTable": "public.oauth2_provider_application",
+     "refColumn": "id"
+    }
+   ],
+   "count": 17,
+   "countEstimated": false,
+   "totalBytes": 106496,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "auth_group",
+   "nomeNegocio": "Grupos de Acesso",
+   "dominioId": "auth",
+   "dominioLabel": "Auth",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "name",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [],
+   "count": 5,
+   "countEstimated": false,
+   "totalBytes": 90112,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "rest_framework_api_key_apikey",
+   "nomeNegocio": "Chaves de API",
+   "dominioId": "rest",
+   "dominioLabel": "Rest",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "created",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "name",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "revoked",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "expiry_date",
+     "type": "timestamp with time zone",
+     "nullable": true
+    },
+    {
+     "name": "hashed_key",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "prefix",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [],
+   "count": 5,
+   "countEstimated": false,
+   "totalBytes": 122880,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_confirmarcodigo",
+   "nomeNegocio": "Authentication confirmarcodigo",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "token",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "valid",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "expires",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "no_expire",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 3,
+   "countEstimated": false,
+   "totalBytes": 106496,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_configuracoes",
+   "nomeNegocio": "Authentication configuracoes",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "dois_fatores",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "somente_govbr",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "urls",
+     "type": "text",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "imagem_login",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "limite_falhas_login",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "logo_cabecalho_login_portal",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "logo_rodape_login_portal",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "certificado_digital",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "govbr_off",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "login_contingencia_manual",
+     "type": "boolean",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [],
+   "count": 1,
+   "countEstimated": false,
+   "totalBytes": 65536,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_gsiapp",
+   "nomeNegocio": "Authentication gsiapp",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "sistema_id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "app_id",
+     "type": "bigint",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    },
+    {
+     "column": "app_id",
+     "refTable": "public.oauth2_provider_application",
+     "refColumn": "id"
+    }
+   ],
+   "count": 1,
+   "countEstimated": false,
+   "totalBytes": 106496,
+   "sugestaoClasse": "migrar",
+   "sugestaoRotulo": "Migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "auth_group_permissions",
+   "nomeNegocio": "Group permissions",
+   "dominioId": "auth",
+   "dominioLabel": "Auth",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "group_id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "permission_id",
+     "type": "integer",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "permission_id",
+     "refTable": "public.auth_permission",
+     "refColumn": "id"
+    },
+    {
+     "column": "group_id",
+     "refTable": "public.auth_group",
+     "refColumn": "id"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 32768,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_confirmaremail",
+   "nomeNegocio": "Authentication confirmaremail",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "token",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "valid",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "expires",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 24576,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_falhalogin",
+   "nomeNegocio": "Authentication falhalogin",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "falha",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "ip",
+     "type": "inet",
+     "nullable": true
+    },
+    {
+     "name": "user_agent",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "used",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 32768,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_redefinirsenha",
+   "nomeNegocio": "Authentication redefinirsenha",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "token",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "valid",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "expires",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "ip",
+     "type": "inet",
+     "nullable": true
+    },
+    {
+     "name": "user_agent",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 32768,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_termos",
+   "nomeNegocio": "Authentication termos",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "titulo",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "versao",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "texto",
+     "type": "text",
+     "nullable": false
+    },
+    {
+     "name": "ativo",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 32768,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_termosassinado",
+   "nomeNegocio": "Authentication termosassinado",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "assinado_em",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "termo_id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    },
+    {
+     "column": "termo_id",
+     "refTable": "public.authentication_termos",
+     "refColumn": "id"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 40960,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "authentication_user_user_permissions",
+   "nomeNegocio": "Authentication user user permissions",
+   "dominioId": "authentication",
+   "dominioLabel": "Authentication",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "permission_id",
+     "type": "integer",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "permission_id",
+     "refTable": "public.auth_permission",
+     "refColumn": "id"
+    },
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 40960,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "crm_emailmarketing",
+   "nomeNegocio": "Crm emailmarketing",
+   "dominioId": "crm",
+   "dominioLabel": "Crm",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "titulo",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "texto",
+     "type": "text",
+     "nullable": false
+    },
+    {
+     "name": "data",
+     "type": "date",
+     "nullable": false
+    },
+    {
+     "name": "hora",
+     "type": "time without time zone",
+     "nullable": false
+    },
+    {
+     "name": "ativo",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 32768,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "django_admin_log",
+   "nomeNegocio": "Admin log",
+   "dominioId": "django",
+   "dominioLabel": "Django",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "action_time",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "object_id",
+     "type": "text",
+     "nullable": true
+    },
+    {
+     "name": "object_repr",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "action_flag",
+     "type": "smallint",
+     "nullable": false
+    },
+    {
+     "name": "change_message",
+     "type": "text",
+     "nullable": false
+    },
+    {
+     "name": "content_type_id",
+     "type": "integer",
+     "nullable": true
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    },
+    {
+     "column": "content_type_id",
+     "refTable": "public.django_content_type",
+     "refColumn": "id"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 40960,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "oauth2_provider_accesstoken",
+   "nomeNegocio": "Oauth2 provider accesstoken",
+   "dominioId": "oauth2",
+   "dominioLabel": "Oauth2",
+   "columns": [
+    {
+     "name": "id",
+     "type": "bigint",
+     "nullable": false
+    },
+    {
+     "name": "token",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "expires",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "scope",
+     "type": "text",
+     "nullable": false
+    },
+    {
+     "name": "application_id",
+     "type": "bigint",
+     "nullable": true
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "created",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "source_refresh_token_id",
+     "type": "bigint",
+     "nullable": true
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "source_refresh_token_id",
+     "refTable": "public.oauth2_provider_refreshtoken",
+     "refColumn": "id"
+    },
+    {
+     "column": "application_id",
+     "refTable": "public.oauth2_provider_application",
+     "refColumn": "id"
+    },
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 65536,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "oauth2_provider_refreshtoken",
+   "nomeNegocio": "Oauth2 provider refreshtoken",
+   "dominioId": "oauth2",
+   "dominioLabel": "Oauth2",
+   "columns": [
+    {
+     "name": "id",
+     "type": "bigint",
+     "nullable": false
+    },
+    {
+     "name": "token",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "access_token_id",
+     "type": "bigint",
+     "nullable": true
+    },
+    {
+     "name": "application_id",
+     "type": "bigint",
+     "nullable": false
+    },
+    {
+     "name": "user_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "created",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "revoked",
+     "type": "timestamp with time zone",
+     "nullable": true
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "access_token_id",
+     "refTable": "public.oauth2_provider_accesstoken",
+     "refColumn": "id"
+    },
+    {
+     "column": "user_id",
+     "refTable": "public.authentication_user",
+     "refColumn": "pessoa_id"
+    },
+    {
+     "column": "application_id",
+     "refTable": "public.oauth2_provider_application",
+     "refColumn": "id"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 49152,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "pessoa_anexos",
+   "nomeNegocio": "Pessoa anexos",
+   "dominioId": "pessoa",
+   "dominioLabel": "Pessoa",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "titulo",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "descricao",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "arquivo",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "pessoa_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "pessoa_id",
+     "refTable": "public.pessoa_pessoa",
+     "refColumn": "cpf"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 32768,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "pessoa_cidades",
+   "nomeNegocio": "Pessoa cidades",
+   "dominioId": "pessoa",
+   "dominioLabel": "Pessoa",
+   "columns": [
+    {
+     "name": "slug",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "cidade",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "estado",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "slug"
+   ],
+   "fks": [],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 24576,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "pessoa_confirmaremail",
+   "nomeNegocio": "Pessoa confirmaremail",
+   "dominioId": "pessoa",
+   "dominioLabel": "Pessoa",
+   "columns": [
+    {
+     "name": "id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "public_key",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "token",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "confirmado",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "pessoa_id",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "pessoa_id",
+     "refTable": "public.pessoa_pessoa",
+     "refColumn": "cpf"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 32768,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  },
+  {
+   "schema": "public",
+   "table": "pessoa_endereco",
+   "nomeNegocio": "Pessoa endereco",
+   "dominioId": "pessoa",
+   "dominioLabel": "Pessoa",
+   "columns": [
+    {
+     "name": "id",
+     "type": "integer",
+     "nullable": false
+    },
+    {
+     "name": "endereco",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "complemento",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "bairro",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "cidade_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "cep",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "observacoes",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "status",
+     "type": "boolean",
+     "nullable": false
+    },
+    {
+     "name": "created_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "updated_at",
+     "type": "timestamp with time zone",
+     "nullable": false
+    },
+    {
+     "name": "pessoa_id",
+     "type": "character varying",
+     "nullable": false
+    },
+    {
+     "name": "endereco_correspondencia",
+     "type": "character varying",
+     "nullable": true
+    },
+    {
+     "name": "zona",
+     "type": "character varying",
+     "nullable": false
+    }
+   ],
+   "pk": [
+    "id"
+   ],
+   "fks": [
+    {
+     "column": "cidade_id",
+     "refTable": "public.pessoa_cidades",
+     "refColumn": "slug"
+    },
+    {
+     "column": "pessoa_id",
+     "refTable": "public.pessoa_pessoa",
+     "refColumn": "cpf"
+    }
+   ],
+   "count": 0,
+   "countEstimated": false,
+   "totalBytes": 49152,
+   "sugestaoClasse": "nao-migrar",
+   "sugestaoRotulo": "Sem uso — não migrar",
+   "risco": "baixo",
+   "nota": "",
+   "mapeada": false
+  }
+ ],
+ "dominios": [
+  {
+   "id": "auth",
+   "label": "Auth",
+   "descricao": "Tabelas com prefixo 'auth' — agrupamento automático, sem curadoria",
+   "critico": false
+  },
+  {
+   "id": "authentication",
+   "label": "Authentication",
+   "descricao": "Tabelas com prefixo 'authentication' — agrupamento automático, sem curadoria",
+   "critico": false
+  },
+  {
+   "id": "crm",
+   "label": "Crm",
+   "descricao": "Tabelas com prefixo 'crm' — agrupamento automático, sem curadoria",
+   "critico": false
+  },
+  {
+   "id": "django",
+   "label": "Django",
+   "descricao": "Tabelas com prefixo 'django' — agrupamento automático, sem curadoria",
+   "critico": false
+  },
+  {
+   "id": "oauth2",
+   "label": "Oauth2",
+   "descricao": "Tabelas com prefixo 'oauth2' — agrupamento automático, sem curadoria",
+   "critico": false
+  },
+  {
+   "id": "pessoa",
+   "label": "Pessoa",
+   "descricao": "Tabelas com prefixo 'pessoa' — agrupamento automático, sem curadoria",
+   "critico": false
+  },
+  {
+   "id": "rest",
+   "label": "Rest",
+   "descricao": "Tabelas com prefixo 'rest' — agrupamento automático, sem curadoria",
+   "critico": false
+  }
+ ],
+ "resumoDominios": [
+  {
+   "dominioId": "auth",
+   "label": "Auth",
+   "total": 4,
+   "vazias": 1,
+   "registros": 1951102
+  },
+  {
+   "dominioId": "authentication",
+   "label": "Authentication",
+   "total": 27,
+   "vazias": 6,
+   "registros": 36537644
+  },
+  {
+   "dominioId": "crm",
+   "label": "Crm",
+   "total": 1,
+   "vazias": 1,
+   "registros": 0
+  },
+  {
+   "dominioId": "django",
+   "label": "Django",
+   "total": 4,
+   "vazias": 1,
+   "registros": 3685893
+  },
+  {
+   "dominioId": "oauth2",
+   "label": "Oauth2",
+   "total": 4,
+   "vazias": 2,
+   "registros": 1711812
+  },
+  {
+   "dominioId": "pessoa",
+   "label": "Pessoa",
+   "total": 7,
+   "vazias": 4,
+   "registros": 1910197
+  },
+  {
+   "dominioId": "rest",
+   "label": "Rest",
+   "total": 1,
+   "vazias": 0,
+   "registros": 5
+  }
+ ],
+ "decisao": {
+  "descartar": 15,
+  "avaliar": 0,
+  "migrar": 33,
+  "recriar": 0
+ },
+ "paretoTop10": [
+  {
+   "table": "authentication_historicologin",
+   "nomeNegocio": "Authentication historicologin",
+   "registros": 17752457,
+   "acumuladoPct": 38.8
+  },
+  {
+   "table": "authentication_tokengovbr",
+   "nomeNegocio": "Authentication tokengovbr",
+   "registros": 9086140,
+   "acumuladoPct": 58.6
+  },
+  {
+   "table": "authentication_acessossistemagsi",
+   "nomeNegocio": "Authentication acessossistemagsi",
+   "registros": 6086115,
+   "acumuladoPct": 71.9
+  },
+  {
+   "table": "django_session",
+   "nomeNegocio": "Sessões de Login",
+   "registros": 3685749,
+   "acumuladoPct": 79.9
+  },
+  {
+   "table": "auth_codigo_govbr",
+   "nomeNegocio": "Codigo govbr",
+   "registros": 1950925,
+   "acumuladoPct": 84.2
+  },
+  {
+   "table": "oauth2_provider_grant",
+   "nomeNegocio": "Oauth2 provider grant",
+   "registros": 1711756,
+   "acumuladoPct": 87.9
+  },
+  {
+   "table": "authentication_acessousuario",
+   "nomeNegocio": "Authentication acessousuario",
+   "registros": 1381572,
+   "acumuladoPct": 91.0
+  },
+  {
+   "table": "pessoa_pessoa",
+   "nomeNegocio": "Pessoa pessoa",
+   "registros": 951765,
+   "acumuladoPct": 93.0
+  },
+  {
+   "table": "pessoa_contato",
+   "nomeNegocio": "Pessoa contato",
+   "registros": 951721,
+   "acumuladoPct": 95.1
+  },
+  {
+   "table": "authentication_user",
+   "nomeNegocio": "Authentication user",
+   "registros": 951708,
+   "acumuladoPct": 97.2
+  }
+ ],
+ "perguntasAbertas": [],
+ "der": {
+  "auth": "erDiagram\n    auth_codigo_govbr {\n        uuid id PK\n        character_varying code\n        timestamp_with_time_zone created_at\n        boolean used\n        character_varying user_id FK\n        text govbr_original_code\n    }\n    auth_permission {\n        integer id PK\n        character_varying name\n        integer content_type_id FK\n        character_varying codename\n    }\n    auth_group {\n        integer id PK\n        character_varying name\n    }",
+  "authentication": "erDiagram\n    authentication_historicologin }o--|| authentication_user : \"user_id\"\n    authentication_tokengovbr }o--|| authentication_user : \"user_id\"\n    authentication_acessossistemagsi }o--|| authentication_user : \"user_id\"\n    authentication_acessousuario }o--|| authentication_user : \"user_id\"\n    authentication_user_groups }o--|| authentication_user : \"user_id\"\n    authentication_confirmarlogin }o--|| authentication_user : \"user_id\"\n    authentication_empresa_users }o--|| authentication_user : \"user_id\"\n    authentication_empresa_users }o--|| authentication_empresa : \"empresa_id\"\n    authentication_assinaturagovbr }o--|| authentication_user : \"user_id\"\n    authentication_favoritossistemagsi }o--|| authentication_user : \"user_id\"\n    authentication_confirmarassinatura }o--|| authentication_user : \"user_id\"\n    authentication_assinatura }o--|| authentication_user : \"user_id\"\n    authentication_usuarioorgao }o--|| authentication_user : \"user_id\"\n    authentication_usuarioorgao }o--|| authentication_orgaos : \"orgao_id\"\n    authentication_assinaturaredirecionamento }o--|| authentication_user : \"user_id\"\n    authentication_confirmarcodigo }o--|| authentication_user : \"user_id\"\n    authentication_gsiapp }o--|| authentication_user : \"user_id\"",
+  "django": "erDiagram\n    django_session {\n        character_varying session_key PK\n        text session_data\n        timestamp_with_time_zone expire_date\n    }\n    django_migrations {\n        integer id PK\n        character_varying app\n        character_varying name\n        timestamp_with_time_zone applied\n    }\n    django_content_type {\n        integer id PK\n        character_varying app_label\n        character_varying model\n    }",
+  "oauth2": "erDiagram\n    oauth2_provider_grant {\n        bigint id PK\n        character_varying code\n        timestamp_with_time_zone expires\n        character_varying redirect_uri\n        text scope\n        bigint application_id FK\n        character_varying user_id FK\n        timestamp_with_time_zone created\n    }\n    oauth2_provider_application {\n        bigint id PK\n        character_varying client_id\n        text redirect_uris\n        character_varying client_type\n        character_varying authorization_grant_type\n        character_varying client_secret\n        character_varying name\n        character_varying user_id FK\n    }\n    oauth2_provider_grant }o--|| oauth2_provider_application : \"application_id\"",
+  "pessoa": "erDiagram\n    pessoa_pessoa {\n        character_varying nome\n        character_varying nome_social\n        character_varying cpf PK\n        character_varying sexo\n        character_varying nome_pai\n        character_varying nome_mae\n        date data_nascimento\n        timestamp_with_time_zone created_at\n    }\n    pessoa_contato {\n        integer id PK\n        character_varying email\n        character_varying telefone\n        timestamp_with_time_zone created_at\n        timestamp_with_time_zone updated_at\n        character_varying pessoa_id FK\n        character_varying celular\n        character_varying facebook\n    }\n    pessoa_fotos {\n        integer id PK\n        character_varying arquivo\n        timestamp_with_time_zone created_at\n        timestamp_with_time_zone updated_at\n        character_varying pessoa_id FK\n        boolean atual\n    }\n    pessoa_contato }o--|| pessoa_pessoa : \"pessoa_id\"\n    pessoa_fotos }o--|| pessoa_pessoa : \"pessoa_id\"",
+  "rest": "erDiagram\n    rest_framework_api_key_apikey {\n        character_varying id PK\n        timestamp_with_time_zone created\n        character_varying name\n        boolean revoked\n        timestamp_with_time_zone expiry_date\n        character_varying hashed_key\n        character_varying prefix\n    }"
+ }
+}

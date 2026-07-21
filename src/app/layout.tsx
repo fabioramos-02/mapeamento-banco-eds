@@ -15,7 +15,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Mapeamento do Banco EDS — SETDIG",
+  title: "Mapeamento de Bancos — SETDIG",
   description: "Subsídio para a decisão de migração de dados na transição EDS → XVia",
 };
 

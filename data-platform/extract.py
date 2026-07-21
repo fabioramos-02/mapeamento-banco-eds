@@ -1,10 +1,20 @@
-"""Extrai metadados, contagens e relacionamentos do banco EDS → data/inventario.json."""
+"""Extrai metadados, contagens e relacionamentos do banco → data/inventario*.json.
+
+Uso: python extract.py [admin|controlador]  (default: admin)
+"""
 import json
+import sys
 from pathlib import Path
 
 from db import connect
 
-OUT = Path(__file__).resolve().parent.parent / "data" / "inventario.json"
+BASE = Path(__file__).resolve().parent.parent
+
+# alvo -> (chave de env do banco, nome do arquivo de saída)
+ALVOS = {
+    "admin": ("BANCO_ADMIN", "inventario.json"),
+    "controlador": ("BANCO_CONTROLADOR", "inventario_controlador.json"),
+}
 
 META_SQL = """
 SELECT t.table_schema, t.table_name
@@ -56,9 +66,11 @@ FROM pg_stat_user_tables
 """
 
 
-def main():
+def main(alvo="admin"):
+    banco_env, nome_saida = ALVOS[alvo]
+    out = BASE / "data" / nome_saida
     inv = {}
-    with connect() as conn, conn.cursor() as cur:
+    with connect(banco_env) as conn, conn.cursor() as cur:
         cur.execute(META_SQL)
         for schema, table in cur.fetchall():
             inv[f"{schema}.{table}"] = {
@@ -107,14 +119,14 @@ def main():
                 t["count_estimated"] = True
                 print(f"  aviso: count exato falhou em {key}: {e}")
 
-    OUT.parent.mkdir(exist_ok=True)
-    OUT.write_text(json.dumps(inv, indent=1, ensure_ascii=False), encoding="utf-8")
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(json.dumps(inv, indent=1, ensure_ascii=False), encoding="utf-8")
 
     total = len(inv)
     vazias = sum(1 for t in inv.values() if t["count"] == 0)
     registros = sum(t["count"] or 0 for t in inv.values())
-    print(f"{total} tabelas | {vazias} vazias | {registros:,} registros | -> {OUT}")
+    print(f"{total} tabelas | {vazias} vazias | {registros:,} registros | -> {out}")
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1] if len(sys.argv) > 1 else "admin")

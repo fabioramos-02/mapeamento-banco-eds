@@ -3,9 +3,9 @@ import path from "node:path";
 import { GovHeader } from "@/components/relatorio/GovHeader";
 import { DerViewer } from "@/components/relatorio/DerViewer";
 import { MetricCard } from "@/components/dashboard/MetricCard";
-import { getInventarioEds } from "@/lib/data";
+import { getInventarioAdmin } from "@/lib/data";
 
-export const metadata = { title: "Anexo técnico — Mapeamento do Banco EDS" };
+export const metadata = { title: "Anexo técnico — Mapeamento do Banco Admin (EDS)" };
 
 // Consultas SQL vêm num único arquivo com blocos "-- N. Título" — quebra em
 // seções pra render em accordion (<details>) em vez de despejar tudo de uma vez.
@@ -26,10 +26,10 @@ function secoesSql(sql: string) {
   return secoes;
 }
 
-export default function TecnicoPage() {
-  const inv = getInventarioEds();
+export default function AdminTecnicoPage() {
+  const inv = getInventarioAdmin();
   const dominioLabels = Object.fromEntries(inv.dominios.map((d) => [d.id, d.label]));
-  const sql = fs.readFileSync(path.join(process.cwd(), "public", "consultas.sql"), "utf-8");
+  const sql = fs.readFileSync(path.join(process.cwd(), "public", "consultas-admin.sql"), "utf-8");
   const secoes = secoesSql(sql);
 
   const cartasServico = inv.tabelas.find((t) => t.table === "gerenciamento_servicos")?.count ?? 0;
@@ -37,7 +37,7 @@ export default function TecnicoPage() {
 
   return (
     <>
-      <GovHeader atual="/tecnico" />
+      <GovHeader atual="/admin/tecnico" dominio="admin" />
       <main className="max-w-5xl mx-auto px-6 py-8 flex flex-col gap-8">
         <section className="grid sm:grid-cols-2 gap-3">
           <MetricCard label="Cartas de serviço cadastradas" value={cartasServico} sub="tabela gerenciamento_servicos" />
@@ -58,8 +58,8 @@ export default function TecnicoPage() {
         <section>
           <div className="flex items-center justify-between mb-2 gap-4 flex-wrap">
             <h2 className="heading-portal">Consultas SQL</h2>
-            <a href="/consultas.sql" download className="ds-button ds-button--outline ds-button--sm">
-              Baixar consultas.sql
+            <a href="/consultas-admin.sql" download className="ds-button ds-button--outline ds-button--sm">
+              Baixar consultas-admin.sql
             </a>
           </div>
           <p className="text-sm mb-4" style={{ color: "var(--ds-color-text-secondary)" }}>

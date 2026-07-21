@@ -37,21 +37,29 @@ const colunas: Coluna<Tabela>[] = [
 ];
 
 /** Só as tabelas críticas (risco alto) — o inventário completo fica em /inventario. */
-export function DecisaoTabelaSection({ tabelas }: { tabelas: Tabela[] }) {
+export function DecisaoTabelaSection({
+  tabelas,
+  bancoFrase = "da EDS",
+  hrefInventario = "/inventario",
+}: {
+  tabelas: Tabela[];
+  bancoFrase?: string;
+  hrefInventario?: string;
+}) {
   const criticas = tabelas.filter((t) => t.risco === "alto").sort((a, b) => b.count - a.count);
 
   return (
     <DashboardSection
       title="5. O que migrar primeiro"
       action={
-        <Link href="/inventario" className="ds-button ds-button--outline ds-button--sm">
+        <Link href={hrefInventario} className="ds-button ds-button--outline ds-button--sm">
           Ver inventário completo →
         </Link>
       }
     >
       <p className="text-sm mb-4" style={{ color: "var(--ds-color-text-secondary)" }}>
         {criticas.length} tabelas concentram o maior risco de migração — volume alto num bloco central do negócio.
-        Merecem validação prioritária com a equipe da EDS antes de qualquer decisão.
+        Merecem validação prioritária com a equipe {bancoFrase} antes de qualquer decisão.
       </p>
       <DataTable columns={colunas} rows={criticas} rowKey={(t) => t.table} />
     </DashboardSection>
