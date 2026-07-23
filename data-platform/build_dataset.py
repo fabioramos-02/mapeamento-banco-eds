@@ -50,6 +50,8 @@ def main():
         "paretoTop10": montar_pareto(tabelas),
         "perguntasAbertas": PERGUNTAS_ABERTAS,
         "der": montar_der(inv_bruto.values(), dominio),
+        "porSistema": [],  # dimensão só existe no Controlador (acessos GSI por sistema externo)
+        "govbr": {"appsRegistrados": 0, "appsComLoginGovbr": 0, "appsComAssinaturaGovbr": 0, "porLogin": [], "porAssinatura": []},
     }
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)

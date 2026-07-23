@@ -41,16 +41,18 @@ export function DecisaoTabelaSection({
   tabelas,
   bancoFrase = "da EDS",
   hrefInventario = "/inventario",
+  titulo = "5. O que migrar primeiro",
 }: {
   tabelas: Tabela[];
   bancoFrase?: string;
   hrefInventario?: string;
+  titulo?: string;
 }) {
   const criticas = tabelas.filter((t) => t.risco === "alto").sort((a, b) => b.count - a.count);
 
   return (
     <DashboardSection
-      title="5. O que migrar primeiro"
+      title={titulo}
       action={
         <Link href={hrefInventario} className="ds-button ds-button--outline ds-button--sm">
           Ver inventário completo →

@@ -34,14 +34,16 @@ export default function AdminTecnicoPage() {
 
   const cartasServico = inv.tabelas.find((t) => t.table === "gerenciamento_servicos")?.count ?? 0;
   const orgaosCadastrados = inv.tabelas.find((t) => t.table === "gerenciamento_orgaos")?.count ?? 0;
+  const usuarios = inv.tabelas.find((t) => t.table === "auth_user")?.count ?? 0;
 
   return (
     <>
       <GovHeader atual="/admin/tecnico" dominio="admin" />
       <main className="max-w-5xl mx-auto px-6 py-8 flex flex-col gap-8">
-        <section className="grid sm:grid-cols-2 gap-3">
+        <section className="grid sm:grid-cols-3 gap-3">
           <MetricCard label="Cartas de serviço cadastradas" value={cartasServico} sub="tabela gerenciamento_servicos" />
           <MetricCard label="Órgãos cadastrados" value={orgaosCadastrados} sub="tabela gerenciamento_orgaos" />
+          <MetricCard label="Usuários cadastrados" value={usuarios} sub="tabela auth_user" />
         </section>
 
         <section>

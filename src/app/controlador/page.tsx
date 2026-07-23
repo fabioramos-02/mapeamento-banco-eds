@@ -3,6 +3,7 @@ import { DecisaoSection } from "@/components/relatorio/DecisaoSection";
 import { DescobertaSection } from "@/components/relatorio/DescobertaSection";
 import { BlocosSection } from "@/components/relatorio/BlocosSection";
 import { ConcentracaoSection } from "@/components/relatorio/ConcentracaoSection";
+import { SistemasSection } from "@/components/relatorio/SistemasSection";
 import { DecisaoTabelaSection } from "@/components/relatorio/DecisaoTabelaSection";
 import { PautaSection } from "@/components/relatorio/PautaSection";
 import { getInventario } from "@/lib/data";
@@ -35,10 +36,16 @@ export default function ControladorHome() {
         />
         <BlocosSection resumo={inv.resumoDominios} dominios={inv.dominios} />
         <ConcentracaoSection pareto={inv.paretoTop10} />
-        <DecisaoTabelaSection tabelas={inv.tabelas} bancoFrase="do Controlador" hrefInventario="/controlador/inventario" />
+        <SistemasSection govbr={inv.govbr} />
+        <DecisaoTabelaSection
+          tabelas={inv.tabelas}
+          bancoFrase="do Controlador"
+          hrefInventario="/controlador/inventario"
+          titulo="6. O que migrar primeiro"
+        />
         <PautaSection
           perguntas={inv.perguntasAbertas}
-          titulo="6. Perguntas em aberto"
+          titulo="7. Perguntas em aberto"
           descricao="Pontos que vão surgir quando houver um mapeamento manual do Controlador, no mesmo padrão do mapeamento da EDS."
         />
 

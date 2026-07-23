@@ -5,9 +5,10 @@ export type DatasetId = "admin" | "controlador";
 
 export type DominioMeta = { id: DatasetId; label: string; descricao: string };
 
+// Ordem = ordem de migração (Controlador primeiro), não ordem de criação do relatório.
 export const DOMINIOS_DISPONIVEIS: DominioMeta[] = [
-  { id: "admin", label: "Admin", descricao: "Carta de Serviço, órgãos, unidades, atendimento — banco admin_prd" },
   { id: "controlador", label: "Controlador", descricao: "Login federado gov.br, autenticação, pessoa — banco controlador_prd" },
+  { id: "admin", label: "Admin", descricao: "Carta de Serviço, órgãos, unidades, atendimento — banco admin_prd" },
 ];
 
 export type Coluna = { name: string; type: string; nullable: boolean };
@@ -38,6 +39,14 @@ export type Dominio = { id: string; label: string; descricao: string; critico: b
 export type ResumoDominio = { dominioId: string; label: string; total: number; vazias: number; registros: number };
 export type ParetoItem = { table: string; nomeNegocio: string; registros: number; acumuladoPct: number };
 export type Decisao = { descartar: number; avaliar: number; migrar: number; recriar: number };
+export type PorSistemaItem = { sistema: string; sigla: string; registros: number; acumuladoPct: number };
+export type GovbrResumo = {
+  appsRegistrados: number;
+  appsComLoginGovbr: number;
+  appsComAssinaturaGovbr: number;
+  porLogin: PorSistemaItem[];
+  porAssinatura: PorSistemaItem[];
+};
 
 export type InventarioEds = {
   extraidoEm: string;
@@ -48,6 +57,8 @@ export type InventarioEds = {
   paretoTop10: ParetoItem[];
   perguntasAbertas: string[];
   der: Record<string, string>;
+  porSistema: PorSistemaItem[];
+  govbr: GovbrResumo;
 };
 
 const cache = new Map<DatasetId, InventarioEds>();

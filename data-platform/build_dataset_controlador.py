@@ -16,11 +16,51 @@ from risco import calcular_risco
 
 BASE = Path(__file__).resolve().parent.parent
 IN_PATH = BASE / "data" / "inventario_controlador.json"
+IN_SISTEMAS = BASE / "data" / "sistemas_controlador.json"
 OUT_JSON = BASE / "datasets" / "controlador" / "v1" / "inventario.json"
 OUT_SQL = BASE / "public" / "consultas-controlador.sql"
 
 
+def _com_acumulado(itens, campo_nome, campo_sigla=None):
+    """[{registros, ...}] ordenado desc -> mesma lista + acumuladoPct, formato
+    compatível com o ParetoChart do front (sistema/sigla/registros/acumuladoPct)."""
+    itens = sorted(itens, key=lambda s: -s["registros"])
+    total = sum(s["registros"] for s in itens)
+    acumulado = 0
+    out = []
+    for s in itens:
+        acumulado += s["registros"]
+        out.append({
+            "sistema": s[campo_nome], "sigla": s[campo_sigla] if campo_sigla else s[campo_nome],
+            "registros": s["registros"],
+            "acumuladoPct": round(100 * acumulado / total, 1) if total else 0,
+        })
+    return out
+
+
+def montar_sistemas():
+    """Sistemas externos integrados via govBR — só existe pro Controlador, não é
+    uma dimensão do Admin/EDS. Duas visões: acesso GSI (volume bruto) e o funil
+    OAuth2 (quantos sistemas de fato logaram/assinaram via govBR)."""
+    vazio = {"porSistema": [], "govbr": {"appsRegistrados": 0, "appsComLoginGovbr": 0,
+             "appsComAssinaturaGovbr": 0, "porLogin": [], "porAssinatura": []}}
+    if not IN_SISTEMAS.exists():
+        return vazio
+    dados = json.load(open(IN_SISTEMAS, encoding="utf-8"))
+    return {
+        "porSistema": _com_acumulado(dados["gsi"], "nome", "sigla"),
+        "govbr": {
+            "appsRegistrados": dados["govbr"]["appsRegistrados"],
+            "appsComLoginGovbr": dados["govbr"]["appsComLoginGovbr"],
+            "appsComAssinaturaGovbr": dados["govbr"]["appsComAssinaturaGovbr"],
+            "porLogin": _com_acumulado(dados["govbr"]["porLogin"], "nome"),
+            "porAssinatura": _com_acumulado(dados["govbr"]["porAssinatura"], "nome"),
+        },
+    }
+
+
 def main():
+    sistemas = montar_sistemas()
     inv_bruto = json.load(open(IN_PATH, encoding="utf-8"))
     tabelas = [
         montar_tabela(t, dominio, nome_negocio, calcular_risco, ANOTACOES, MAPEADAS)
@@ -45,6 +85,8 @@ def main():
         "paretoTop10": montar_pareto(tabelas),
         "perguntasAbertas": PERGUNTAS_ABERTAS,
         "der": montar_der(inv_bruto.values(), dominio),
+        "porSistema": sistemas["porSistema"],
+        "govbr": sistemas["govbr"],
     }
 
     OUT_JSON.parent.mkdir(parents=True, exist_ok=True)

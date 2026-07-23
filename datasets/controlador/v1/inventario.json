@@ -1,5 +1,5 @@
 {
- "extraidoEm": "2026-07-21T20:31:26.557090+00:00",
+ "extraidoEm": "2026-07-21T21:22:24.155337+00:00",
  "tabelas": [
   {
    "schema": "public",
@@ -3317,5 +3317,808 @@
   "oauth2": "erDiagram\n    oauth2_provider_grant {\n        bigint id PK\n        character_varying code\n        timestamp_with_time_zone expires\n        character_varying redirect_uri\n        text scope\n        bigint application_id FK\n        character_varying user_id FK\n        timestamp_with_time_zone created\n    }\n    oauth2_provider_application {\n        bigint id PK\n        character_varying client_id\n        text redirect_uris\n        character_varying client_type\n        character_varying authorization_grant_type\n        character_varying client_secret\n        character_varying name\n        character_varying user_id FK\n    }\n    oauth2_provider_grant }o--|| oauth2_provider_application : \"application_id\"",
   "pessoa": "erDiagram\n    pessoa_pessoa {\n        character_varying nome\n        character_varying nome_social\n        character_varying cpf PK\n        character_varying sexo\n        character_varying nome_pai\n        character_varying nome_mae\n        date data_nascimento\n        timestamp_with_time_zone created_at\n    }\n    pessoa_contato {\n        integer id PK\n        character_varying email\n        character_varying telefone\n        timestamp_with_time_zone created_at\n        timestamp_with_time_zone updated_at\n        character_varying pessoa_id FK\n        character_varying celular\n        character_varying facebook\n    }\n    pessoa_fotos {\n        integer id PK\n        character_varying arquivo\n        timestamp_with_time_zone created_at\n        timestamp_with_time_zone updated_at\n        character_varying pessoa_id FK\n        boolean atual\n    }\n    pessoa_contato }o--|| pessoa_pessoa : \"pessoa_id\"\n    pessoa_fotos }o--|| pessoa_pessoa : \"pessoa_id\"",
   "rest": "erDiagram\n    rest_framework_api_key_apikey {\n        character_varying id PK\n        timestamp_with_time_zone created\n        character_varying name\n        boolean revoked\n        timestamp_with_time_zone expiry_date\n        character_varying hashed_key\n        character_varying prefix\n    }"
+ },
+ "porSistema": [
+  {
+   "sistema": "E-MS ELLOS ECM",
+   "sigla": "E-MS",
+   "registros": 6045552,
+   "acumuladoPct": 99.3
+  },
+  {
+   "sistema": "CI e OFÍCIO Comunicação Eletrônica",
+   "sigla": "CI&OFICIO",
+   "registros": 30751,
+   "acumuladoPct": 99.8
+  },
+  {
+   "sistema": "Sistema de Gestão de Dados Escolares",
+   "sigla": "SGDE",
+   "registros": 2210,
+   "acumuladoPct": 99.9
+  },
+  {
+   "sistema": "Sistema de Gestão de Entrada de Dados",
+   "sigla": "SISGED",
+   "registros": 1825,
+   "acumuladoPct": 99.9
+  },
+  {
+   "sistema": "Portal de Sistemas da SED",
+   "sigla": "PORTALSED",
+   "registros": 634,
+   "acumuladoPct": 99.9
+  },
+  {
+   "sistema": "Sistema de Planejamento e Finanças",
+   "sigla": "SPF",
+   "registros": 575,
+   "acumuladoPct": 99.9
+  },
+  {
+   "sistema": "Gestão de Segurança Integrada",
+   "sigla": "GSI",
+   "registros": 539,
+   "acumuladoPct": 99.9
+  },
+  {
+   "sistema": "Sistema Emissor de Certificação",
+   "sigla": "CERTIFICAÇÃO",
+   "registros": 458,
+   "acumuladoPct": 99.9
+  },
+  {
+   "sistema": "Sistema Gestor de Diárias Estaduais e Federais",
+   "sigla": "SGDEF",
+   "registros": 421,
+   "acumuladoPct": 99.9
+  },
+  {
+   "sistema": "Sistema de Perícia Médica",
+   "sigla": "SIPEM",
+   "registros": 388,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Carteira Digital de Identificação Estudantil do Mato Grosso do Sul",
+   "sigla": "CDIEMS",
+   "registros": 357,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Boletim Geral CBMMS",
+   "sigla": "BGCBMMS",
+   "registros": 316,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Cadastro de Professor Temporário",
+   "sigla": "CADPROF",
+   "registros": 289,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Coleta de Avaliações",
+   "sigla": "AVALIAÇÃO",
+   "registros": 282,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Plano de Trabalho da Unidade Escolar",
+   "sigla": "PDDE",
+   "registros": 189,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Gestão de Estrutura Organizacional",
+   "sigla": "SGE",
+   "registros": 132,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema Gestor de Patrimônio",
+   "sigla": "GPA",
+   "registros": 113,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Projetos Educacionais",
+   "sigla": "SEDPED",
+   "registros": 112,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "PARECERES PGE",
+   "sigla": "PARECERES",
+   "registros": 97,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "REDESUAS",
+   "sigla": "REDESUAS",
+   "registros": 73,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Agenda Corporativa - SED",
+   "sigla": "AGENDASED",
+   "registros": 66,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Entrega de Recurso",
+   "sigla": "ENTREGARECURSO",
+   "registros": 52,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Gestão de Pagamento de Diferenças do Servidor",
+   "sigla": "SIGPAD",
+   "registros": 52,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Notificação de Ocorrência Escolar",
+   "sigla": "SNOE",
+   "registros": 51,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema Gestor de Passagens Aéreas e Rodoviárias",
+   "sigla": "SGPAR",
+   "registros": 49,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Cadastro de Veículos Oficiais do Estado",
+   "sigla": "E-VEICULOS",
+   "registros": 47,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Portal Corporativo da Escola de Governo",
+   "sigla": "ESCOLAGOV",
+   "registros": 45,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Barreira Sanitária",
+   "sigla": "SBS",
+   "registros": 40,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Cadastro de Documentos",
+   "sigla": "DOCUMENTOS",
+   "registros": 39,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Livros Didáticos",
+   "sigla": "PNLD",
+   "registros": 38,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Envio de Emails",
+   "sigla": "EMAIL",
+   "registros": 34,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Gestão de Linhas Tarifas",
+   "sigla": "SGLTAR",
+   "registros": 25,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema Gestor de Transporte Servidor Público",
+   "sigla": "SIGTRANSP",
+   "registros": 25,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Concurso de Remoção de Professores On-line",
+   "sigla": "REMOÇÃO",
+   "registros": 24,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Gestão Contas Públicas",
+   "sigla": "GCP",
+   "registros": 24,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Temporalidade de Documentos",
+   "sigla": "TEMPDOC",
+   "registros": 23,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Gestão de Controle de Almoxarifado",
+   "sigla": "GCA",
+   "registros": 22,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Cadastro de Convenentes da Administração Estadual",
+   "sigla": "CECON",
+   "registros": 18,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Avaliação Estágio Probatório e Desempenho",
+   "sigla": "AED",
+   "registros": 16,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "MMidia",
+   "sigla": "MMIDIA",
+   "registros": 13,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "PESQUISAMS",
+   "sigla": "PESQUISAMS",
+   "registros": 12,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "GESTÃO DE DEMANDAS INTEGRADAS - COTIN",
+   "sigla": "GDI-COTIN",
+   "registros": 10,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Bloqueio Telefônico",
+   "sigla": "BLOQTEL",
+   "registros": 10,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Fundesporte - Ficha de Inscrição para Cursos",
+   "sigla": "FFIC",
+   "registros": 7,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Avaliação de Competências Básicas",
+   "sigla": "ACB",
+   "registros": 6,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Gestão de Passe Livre Intermunicipal",
+   "sigla": "SGPLI",
+   "registros": 6,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "ELLOS ECM SEGOV",
+   "sigla": "ECMSEGOV",
+   "registros": 5,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Cadastro de Atendimento dos Migrantes em Mato Grosso do Sul",
+   "sigla": "CADMIMS",
+   "registros": 5,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Gestão de Contas Públicas",
+   "sigla": "GCP ANTIGO",
+   "registros": 4,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "VALE UNIVERSIDADE-Programa Social que oferece oportunidade ao Acadêmico de baixa renda",
+   "sigla": "VALEUNIVER",
+   "registros": 4,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Concursos Educação Fiscal",
+   "sigla": "CON-ED-FISCAL",
+   "registros": 3,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Pesquisa de Preço",
+   "sigla": "SPP",
+   "registros": 3,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema Gerencial de Ações Sociais",
+   "sigla": "SGA",
+   "registros": 3,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Gerenciador de Documentos Eletrônicos da SEINFRA",
+   "sigla": "GED_SEINFRA",
+   "registros": 3,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Gestão de Demandas Tributárias",
+   "sigla": "GDT",
+   "registros": 3,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Permissões SGI",
+   "sigla": "PERMISSOESSGI",
+   "registros": 2,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Gestão Integrada de Protocolos",
+   "sigla": "GIP",
+   "registros": 2,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Gestão de Trabalho e Renda",
+   "sigla": "SGTR",
+   "registros": 2,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Controle de Saldo de Incentivos",
+   "sigla": "CSI",
+   "registros": 2,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Gestão do Diário Oficial Eletrônico",
+   "sigla": "GDOE",
+   "registros": 2,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Tempo de Contribuição Previdenciário",
+   "sigla": "SISTCOP",
+   "registros": 2,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Gerencial Especializado da Assistência Farmacêutica",
+   "sigla": "GERENCIAL",
+   "registros": 2,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema Gestor de Nomeação de Concursos",
+   "sigla": "SGNC",
+   "registros": 2,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema de Livro Ponto",
+   "sigla": "LIVROPONTO",
+   "registros": 2,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Componente de Medicamentos Dispensação Excepcional",
+   "sigla": "CMDEGR",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Concursos",
+   "sigla": "CON",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Fala Servidor",
+   "sigla": "FSMS",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Pesquisa de Preço",
+   "sigla": "PESQUISAPRECO",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "SISTEMA DE ADMINISTRAÇÃO DE PORTAL",
+   "sigla": "ADMINPORTAL",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Administracao EAD",
+   "sigla": "ADMEAD",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "COGEF Sistema Gerenciador de Documento",
+   "sigla": "SGD-CODEF",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "CONTROLE DE DENUNCIAS E OCORRÊNCIAS ESCOLAR",
+   "sigla": "CODOE",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "SISTEMA DE FORMAÇÃO CONTINUADA",
+   "sigla": "BOLSAAUXILIO",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema Integração Recursos Humanos",
+   "sigla": "SIRH",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Sistema Gestor de Controle de Benefícios",
+   "sigla": "SGCB-CRÉDITO",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Cadastro de Médias e Apuração de Rendimentos",
+   "sigla": "PREMIAÇÃO",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "GSI Serviços",
+   "sigla": "GSIS",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Cadastro RH",
+   "sigla": "RH",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "ADMIN TRANSPARÊNCIA",
+   "sigla": "ADM-TRANSP",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Gestão de Processos Judiciais da Casa da Saúde",
+   "sigla": "SGPJ",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "Compras Emergenciais COVID-19",
+   "sigla": "COVID19",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  },
+  {
+   "sistema": "CHDocente",
+   "sigla": "CHD",
+   "registros": 1,
+   "acumuladoPct": 100.0
+  }
+ ],
+ "govbr": {
+  "appsRegistrados": 56,
+  "appsComLoginGovbr": 41,
+  "appsComAssinaturaGovbr": 9,
+  "porLogin": [
+   {
+    "sistema": "E-MS",
+    "sigla": "E-MS",
+    "registros": 768936,
+    "acumuladoPct": 44.9
+   },
+   {
+    "sistema": "Portal Meu DETRAN - DETRAN / MS",
+    "sigla": "Portal Meu DETRAN - DETRAN / MS",
+    "registros": 387307,
+    "acumuladoPct": 67.5
+   },
+   {
+    "sistema": "MSDigital - Portal",
+    "sigla": "MSDigital - Portal",
+    "registros": 214927,
+    "acumuladoPct": 80.1
+   },
+   {
+    "sistema": "Portal ms.gov.br",
+    "sigla": "Portal ms.gov.br",
+    "registros": 212302,
+    "acumuladoPct": 92.5
+   },
+   {
+    "sistema": "Aplicativo MS Digital",
+    "sigla": "Aplicativo MS Digital",
+    "registros": 50702,
+    "acumuladoPct": 95.4
+   },
+   {
+    "sistema": "SIGO - SESJUSP",
+    "sigla": "SIGO - SESJUSP",
+    "registros": 24944,
+    "acumuladoPct": 96.9
+   },
+   {
+    "sistema": "SIAFIC - Sistema Financeiro",
+    "sigla": "SIAFIC - Sistema Financeiro",
+    "registros": 14669,
+    "acumuladoPct": 97.8
+   },
+   {
+    "sistema": "PREVENIR - CBMMS - SEJUSP",
+    "sigla": "PREVENIR - CBMMS - SEJUSP",
+    "registros": 7727,
+    "acumuladoPct": 98.2
+   },
+   {
+    "sistema": "Ms Qualifica - SEMADESC",
+    "sigla": "Ms Qualifica - SEMADESC",
+    "registros": 7115,
+    "acumuladoPct": 98.6
+   },
+   {
+    "sistema": "EMS-V2 - SAD",
+    "sigla": "EMS-V2 - SAD",
+    "registros": 6301,
+    "acumuladoPct": 99.0
+   },
+   {
+    "sistema": "formflow-web-prod",
+    "sigla": "formflow-web-prod",
+    "registros": 5459,
+    "acumuladoPct": 99.3
+   },
+   {
+    "sistema": "SISPC",
+    "sigla": "SISPC",
+    "registros": 2852,
+    "acumuladoPct": 99.5
+   },
+   {
+    "sistema": "Diario Oficial - SAD",
+    "sigla": "Diario Oficial - SAD",
+    "registros": 2108,
+    "acumuladoPct": 99.6
+   },
+   {
+    "sistema": "TARS - Tecnologia Avançada de Recursos e Serviços - CBMMS",
+    "sigla": "TARS - Tecnologia Avançada de Recursos e Serviços - CBMMS",
+    "registros": 1493,
+    "acumuladoPct": 99.7
+   },
+   {
+    "sistema": "FISCALIZACAO - DETRAN",
+    "sigla": "FISCALIZACAO - DETRAN",
+    "registros": 1318,
+    "acumuladoPct": 99.8
+   },
+   {
+    "sistema": "SISDETE - Avaliação de Alunos - FUNDESPORTE",
+    "sigla": "SISDETE - Avaliação de Alunos - FUNDESPORTE",
+    "registros": 1048,
+    "acumuladoPct": 99.8
+   },
+   {
+    "sistema": "Wifeed - Sonda - Praças - SEGOV",
+    "sigla": "Wifeed - Sonda - Praças - SEGOV",
+    "registros": 931,
+    "acumuladoPct": 99.9
+   },
+   {
+    "sistema": "admin-prod",
+    "sigla": "admin-prod",
+    "registros": 570,
+    "acumuladoPct": 99.9
+   },
+   {
+    "sistema": "PSEG - Processo Seletivo - SAD",
+    "sigla": "PSEG - Processo Seletivo - SAD",
+    "registros": 529,
+    "acumuladoPct": 99.9
+   },
+   {
+    "sistema": "CREDENCIAMENTO - CBMMS - SEJUSP",
+    "sigla": "CREDENCIAMENTO - CBMMS - SEJUSP",
+    "registros": 149,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "DIARIA-SSP - SEJUSP - CBMMS",
+    "sigla": "DIARIA-SSP - SEJUSP - CBMMS",
+    "registros": 138,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "Meu DETRANS/MS - Pré-Produção",
+    "sigla": "Meu DETRANS/MS - Pré-Produção",
+    "registros": 102,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "Responde MS  - SEGOV",
+    "sigla": "Responde MS  - SEGOV",
+    "registros": 79,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "e-Saniagro - IAGRO - MS",
+    "sigla": "e-Saniagro - IAGRO - MS",
+    "registros": 72,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "portal-prod",
+    "sigla": "portal-prod",
+    "registros": 63,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "Painel de Atendimento",
+    "sigla": "Painel de Atendimento",
+    "registros": 56,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "EMS-PUBLICO - V2 - SAD",
+    "sigla": "EMS-PUBLICO - V2 - SAD",
+    "registros": 39,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "SIC - Comando de Incidentes - CBMMS - SEJUSP",
+    "sigla": "SIC - Comando de Incidentes - CBMMS - SEJUSP",
+    "registros": 34,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "REDESUAS - SEAD - MS",
+    "sigla": "REDESUAS - SEAD - MS",
+    "registros": 31,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "Sistema de Gestão de Frota da SEJUSP",
+    "sigla": "Sistema de Gestão de Frota da SEJUSP",
+    "registros": 25,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "SIRIEMA - IMASUL",
+    "sigla": "SIRIEMA - IMASUL",
+    "registros": 18,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "noticias-prod",
+    "sigla": "noticias-prod",
+    "registros": 16,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "TESTE ASSINADOR - EDS",
+    "sigla": "TESTE ASSINADOR - EDS",
+    "registros": 15,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "PREVENIR - HOMOLOGAÇÃO - CBMMS - SEJUSP",
+    "sigla": "PREVENIR - HOMOLOGAÇÃO - CBMMS - SEJUSP",
+    "registros": 15,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "FISCALIZAÇÃO - PREPRODUCAO - DETRAN",
+    "sigla": "FISCALIZAÇÃO - PREPRODUCAO - DETRAN",
+    "registros": 11,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "REDE SAUDE - SES",
+    "sigla": "REDE SAUDE - SES",
+    "registros": 7,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "CRONOS - SEJUSP - CBMMS",
+    "sigla": "CRONOS - SEJUSP - CBMMS",
+    "registros": 3,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "integrador frontend",
+    "sigla": "integrador frontend",
+    "registros": 1,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "TARS - CBMMS - SEJUSP - Homologação",
+    "sigla": "TARS - CBMMS - SEJUSP - Homologação",
+    "registros": 1,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "MADES - IMASUL",
+    "sigla": "MADES - IMASUL",
+    "registros": 1,
+    "acumuladoPct": 100.0
+   },
+   {
+    "sistema": "MONITOR DE ACESSIBILIDADE - SEGOV",
+    "sigla": "MONITOR DE ACESSIBILIDADE - SEGOV",
+    "registros": 1,
+    "acumuladoPct": 100.0
+   }
+  ],
+  "porAssinatura": [
+   {
+    "sistema": "TARS - Tecnologia Avançada de Recursos e Serviços - CBMMS",
+    "sigla": "TARS - Tecnologia Avançada de Recursos e Serviços - CBMMS",
+    "registros": 5377,
+    "acumuladoPct": 51.6
+   },
+   {
+    "sistema": "e-Saniagro - IAGRO - MS",
+    "sigla": "e-Saniagro - IAGRO - MS",
+    "registros": 2399,
+    "acumuladoPct": 74.6
+   },
+   {
+    "sistema": "Diario Oficial - SAD",
+    "sigla": "Diario Oficial - SAD",
+    "registros": 1663,
+    "acumuladoPct": 90.6
+   },
+   {
+    "sistema": "CRONOS - SEJUSP - CBMMS",
+    "sigla": "CRONOS - SEJUSP - CBMMS",
+    "registros": 659,
+    "acumuladoPct": 96.9
+   },
+   {
+    "sistema": "MADES - IMASUL",
+    "sigla": "MADES - IMASUL",
+    "registros": 98,
+    "acumuladoPct": 97.9
+   },
+   {
+    "sistema": "REDESUAS - SEAD - MS",
+    "sigla": "REDESUAS - SEAD - MS",
+    "registros": 84,
+    "acumuladoPct": 98.7
+   },
+   {
+    "sistema": "TARS - CBMMS - SEJUSP - Homologação",
+    "sigla": "TARS - CBMMS - SEJUSP - Homologação",
+    "registros": 83,
+    "acumuladoPct": 99.5
+   },
+   {
+    "sistema": "EMS-PUBLICO - V2 - SAD",
+    "sigla": "EMS-PUBLICO - V2 - SAD",
+    "registros": 50,
+    "acumuladoPct": 99.9
+   },
+   {
+    "sistema": "TESTE ASSINADOR - EDS",
+    "sigla": "TESTE ASSINADOR - EDS",
+    "registros": 6,
+    "acumuladoPct": 100.0
+   }
+  ]
  }
 }

@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { GovHeader } from "@/components/relatorio/GovHeader";
 import { DerViewer } from "@/components/relatorio/DerViewer";
+import { MetricCard } from "@/components/dashboard/MetricCard";
 import { getInventario } from "@/lib/data";
 
 export const metadata = { title: "Anexo técnico — Mapeamento do Banco Controlador" };
@@ -31,10 +32,17 @@ export default function ControladorTecnicoPage() {
   const sql = fs.readFileSync(path.join(process.cwd(), "public", "consultas-controlador.sql"), "utf-8");
   const secoes = secoesSql(sql);
 
+  const usuarios = inv.tabelas.find((t) => t.table === "authentication_user")?.count ?? 0;
+
   return (
     <>
       <GovHeader atual="/controlador/tecnico" dominio="controlador" />
       <main className="max-w-5xl mx-auto px-6 py-8 flex flex-col gap-8">
+        <section className="grid sm:grid-cols-2 gap-3">
+          <MetricCard label="Usuários cadastrados" value={usuarios} sub="tabela authentication_user" />
+          <MetricCard label="Sistemas integrados via govBR" value={inv.porSistema.length} sub="tabela authentication_acessossistemagsi" />
+        </section>
+
         <section>
           <h2 className="heading-portal mb-2">Diagramas de dados</h2>
           <p className="text-sm mb-4" style={{ color: "var(--ds-color-text-secondary)" }}>

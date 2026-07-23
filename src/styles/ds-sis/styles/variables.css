@@ -39,10 +39,13 @@
     |--------------------------------------------------------------------------
     */
 
-    --ds-color-green-600: #28a44c;
-    --ds-color-blue-600: #0d99f7;
+    /* green/blue/yellow escurecidos em relação ao pacote original — os tons de origem
+       davam 3.2:1 (verde), 3.0:1 (azul) e 1.7:1 (amarelo) contra branco, abaixo do
+       mínimo WCAG AA de 4.5:1 pra texto normal. Ajustado pra ~4.5:1 mantendo o matiz. */
+    --ds-color-green-600: #21883f;
+    --ds-color-blue-600: #0a7bc6;
     --ds-color-red-600: #da1e28;
-    --ds-color-yellow-600: #f9bb00;
+    --ds-color-yellow-600: #967100;
     --ds-color-orange-600: #ff832b;
     --ds-color-purple-600: #7c3ed0;
 
@@ -55,7 +58,8 @@
     --ds-color-neutral-0: #ffffff;
     --ds-color-neutral-100: #f9f9f9;
     --ds-color-neutral-200: #d5d5d5;
-    --ds-color-neutral-500: #8e8e8d;
+    /* era #8e8e8d (3.3:1 contra branco) — escurecido pra 4.5:1, mínimo WCAG AA. */
+    --ds-color-neutral-500: #767676;
     --ds-color-neutral-800: #565654;
     --ds-color-neutral-900: #30302e;
     --ds-color-neutral-1000: #1d1d1b;
